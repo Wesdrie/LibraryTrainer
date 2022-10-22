@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.SplitMain = new System.Windows.Forms.SplitContainer();
-            this.ButtonSort = new System.Windows.Forms.Button();
-            this.ButtonArea = new System.Windows.Forms.Button();
-            this.ButtonCall = new System.Windows.Forms.Button();
             this.ButtonExit = new System.Windows.Forms.Button();
+            this.ButtonCall = new System.Windows.Forms.Button();
+            this.ButtonArea = new System.Windows.Forms.Button();
+            this.ButtonSort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitMain)).BeginInit();
             this.SplitMain.Panel1.SuspendLayout();
             this.SplitMain.SuspendLayout();
@@ -51,10 +51,51 @@
             this.SplitMain.Panel1.Controls.Add(this.ButtonCall);
             this.SplitMain.Panel1.Controls.Add(this.ButtonArea);
             this.SplitMain.Panel1.Controls.Add(this.ButtonSort);
+            // 
+            // SplitMain.Panel2
+            // 
+            this.SplitMain.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
             this.SplitMain.Size = new System.Drawing.Size(634, 361);
             this.SplitMain.SplitterDistance = 200;
             this.SplitMain.SplitterWidth = 1;
             this.SplitMain.TabIndex = 0;
+            // 
+            // ButtonExit
+            // 
+            this.ButtonExit.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ButtonExit.FlatAppearance.BorderSize = 0;
+            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonExit.Location = new System.Drawing.Point(0, 316);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(200, 45);
+            this.ButtonExit.TabIndex = 0;
+            this.ButtonExit.Text = "Exit";
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            // 
+            // ButtonCall
+            // 
+            this.ButtonCall.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonCall.Enabled = false;
+            this.ButtonCall.FlatAppearance.BorderSize = 0;
+            this.ButtonCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonCall.Location = new System.Drawing.Point(0, 90);
+            this.ButtonCall.Name = "ButtonCall";
+            this.ButtonCall.Size = new System.Drawing.Size(200, 45);
+            this.ButtonCall.TabIndex = 0;
+            this.ButtonCall.Text = "Call Numbers";
+            this.ButtonCall.UseVisualStyleBackColor = true;
+            // 
+            // ButtonArea
+            // 
+            this.ButtonArea.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonArea.FlatAppearance.BorderSize = 0;
+            this.ButtonArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonArea.Location = new System.Drawing.Point(0, 45);
+            this.ButtonArea.Name = "ButtonArea";
+            this.ButtonArea.Size = new System.Drawing.Size(200, 45);
+            this.ButtonArea.TabIndex = 0;
+            this.ButtonArea.Text = "Identifying Areas";
+            this.ButtonArea.UseVisualStyleBackColor = true;
             // 
             // ButtonSort
             // 
@@ -68,54 +109,19 @@
             this.ButtonSort.Text = "Book Sorting";
             this.ButtonSort.UseVisualStyleBackColor = true;
             // 
-            // ButtonArea
-            // 
-            this.ButtonArea.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonArea.FlatAppearance.BorderSize = 0;
-            this.ButtonArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonArea.Location = new System.Drawing.Point(0, 45);
-            this.ButtonArea.Name = "ButtonArea";
-            this.ButtonArea.Size = new System.Drawing.Size(200, 45);
-            this.ButtonArea.TabIndex = 1;
-            this.ButtonArea.Text = "Identifying Areas";
-            this.ButtonArea.UseVisualStyleBackColor = true;
-            // 
-            // ButtonCall
-            // 
-            this.ButtonCall.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonCall.FlatAppearance.BorderSize = 0;
-            this.ButtonCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonCall.Location = new System.Drawing.Point(0, 90);
-            this.ButtonCall.Name = "ButtonCall";
-            this.ButtonCall.Size = new System.Drawing.Size(200, 45);
-            this.ButtonCall.TabIndex = 2;
-            this.ButtonCall.Text = "Call Numbers";
-            this.ButtonCall.UseVisualStyleBackColor = true;
-            // 
-            // ButtonExit
-            // 
-            this.ButtonExit.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ButtonExit.FlatAppearance.BorderSize = 0;
-            this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonExit.Location = new System.Drawing.Point(0, 316);
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(200, 45);
-            this.ButtonExit.TabIndex = 3;
-            this.ButtonExit.Text = "Exit";
-            this.ButtonExit.UseVisualStyleBackColor = true;
-            // 
             // WindowMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(634, 361);
             this.Controls.Add(this.SplitMain);
-            this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Library Trainer";
             this.SplitMain.Panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitMain)).EndInit();
