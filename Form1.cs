@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace LibraryTrainer
 {
-    public partial class Form1 : Form
+    public partial class WindowMain : Form
     {
-        public Form1()
+        public WindowMain()
         {
             InitializeComponent();
         }
