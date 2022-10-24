@@ -35,7 +35,7 @@ namespace LibraryTrainer
             WindowMain windowMain = new WindowMain();
             windowMain.Show();
 
-            this.Close();
+            this.Hide();
         }
 
         private void WindowAreas_FormClosing(object sender, FormClosingEventArgs e)
