@@ -13,13 +13,15 @@ namespace LibraryTrainer
 {
     public partial class WindowAreas : Form
     {
-        /// <summary>
-        /// VARIBLES & AREAS OBJECT WITH VALUES (EVENTUALLY MOVE TO DB)
-        /// </summary>
         Tools wrench = new Tools();
 
-        Dictionary<string, string> dictionaryAreas = new Dictionary<string, string>();
-        Dictionary<string, string> dictionaryTexts = new Dictionary<string, string>();
+        CallAreas[] callAreas =
+        {
+            new CallAreas("000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
+            new CallAreas("100 - 199", "Philosophy & Psychology", "Paranormal Phenomena, Ethics & “Who Am I”"),
+        };
+
+        Dictionary<string, CallAreas> allAreas = new Dictionary<string, CallAreas>();
 
         int timerTicker, userScore;
         public WindowAreas()
@@ -30,6 +32,11 @@ namespace LibraryTrainer
         {
             try
             {
+                foreach(CallAreas area in callAreas)
+                {
+                    allAreas.Add(area.AreaNumber, area);
+                    Console.WriteLine(area.AreaName);
+                }
 
                 TimerAreas.Start();
             }
@@ -52,9 +59,6 @@ namespace LibraryTrainer
             }
         }
 
-        /// <summary>
-        /// NAVIGATION BUTTONS & ENSURE APPLICAITON CLOSES
-        /// </summary>
         private void ButtonComplete_Click(object sender, EventArgs e)
         {
             try
