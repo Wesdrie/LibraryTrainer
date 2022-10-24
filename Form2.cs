@@ -36,6 +36,10 @@ namespace LibraryTrainer
         {
             try
             {
+                /// <remarks>
+                /// CONNECT TO DATABASE TO PULL SCORES
+                /// </remarks>
+
                 TimerSort.Start();
 
                 for (int i = 0; i < 10; i++)
@@ -132,7 +136,17 @@ namespace LibraryTrainer
         /// </summary>
         private void ButtonComplete_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                TimerSort.Stop();
+                /// <remarks>
+                /// CONNECT TO DATABASE TO SAVE ATTEMPT
+                /// </remarks>
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void ButtonReset_Click(object sender, EventArgs e)
