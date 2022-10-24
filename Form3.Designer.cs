@@ -30,7 +30,6 @@
         {
             this.SplitAreas = new System.Windows.Forms.SplitContainer();
             this.ButtonReset = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).BeginInit();
             this.SplitAreas.Panel1.SuspendLayout();
@@ -47,7 +46,6 @@
             // SplitAreas.Panel1
             // 
             this.SplitAreas.Panel1.Controls.Add(this.ButtonBack);
-            this.SplitAreas.Panel1.Controls.Add(this.button1);
             this.SplitAreas.Panel1.Controls.Add(this.ButtonReset);
             // 
             // SplitAreas.Panel2
@@ -62,6 +60,8 @@
             // 
             this.ButtonReset.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonReset.FlatAppearance.BorderSize = 0;
+            this.ButtonReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonReset.Location = new System.Drawing.Point(0, 0);
             this.ButtonReset.Name = "ButtonReset";
@@ -69,23 +69,14 @@
             this.ButtonReset.TabIndex = 0;
             this.ButtonReset.Text = "Reset";
             this.ButtonReset.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(0, 45);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(200, 45);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Reset";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
             // ButtonBack
             // 
             this.ButtonBack.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ButtonBack.FlatAppearance.BorderSize = 0;
+            this.ButtonBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonBack.Location = new System.Drawing.Point(0, 316);
             this.ButtonBack.Name = "ButtonBack";
@@ -93,6 +84,7 @@
             this.ButtonBack.TabIndex = 0;
             this.ButtonBack.Text = "Back";
             this.ButtonBack.UseVisualStyleBackColor = true;
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
             // WindowAreas
             // 
@@ -103,7 +95,10 @@
             this.Controls.Add(this.SplitAreas);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WindowAreas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Identify Areas";
@@ -117,7 +112,6 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer SplitAreas;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ButtonReset;
         private System.Windows.Forms.Button ButtonBack;
     }

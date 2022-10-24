@@ -62,6 +62,8 @@
             // 
             this.ButtonComplete.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonComplete.FlatAppearance.BorderSize = 0;
+            this.ButtonComplete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonComplete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonComplete.Location = new System.Drawing.Point(0, 45);
             this.ButtonComplete.Name = "ButtonComplete";
@@ -69,11 +71,14 @@
             this.ButtonComplete.TabIndex = 0;
             this.ButtonComplete.Text = "Complete";
             this.ButtonComplete.UseVisualStyleBackColor = true;
+            this.ButtonComplete.Click += new System.EventHandler(this.ButtonComplete_Click);
             // 
             // ButtonReset
             // 
             this.ButtonReset.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonReset.FlatAppearance.BorderSize = 0;
+            this.ButtonReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonReset.Location = new System.Drawing.Point(0, 0);
             this.ButtonReset.Name = "ButtonReset";
@@ -81,11 +86,14 @@
             this.ButtonReset.TabIndex = 0;
             this.ButtonReset.Text = "Reset";
             this.ButtonReset.UseVisualStyleBackColor = true;
+            this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
             // ButtonBack
             // 
             this.ButtonBack.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ButtonBack.FlatAppearance.BorderSize = 0;
+            this.ButtonBack.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonBack.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonBack.Location = new System.Drawing.Point(0, 316);
             this.ButtonBack.Name = "ButtonBack";
@@ -93,6 +101,7 @@
             this.ButtonBack.TabIndex = 0;
             this.ButtonBack.Text = "Back";
             this.ButtonBack.UseVisualStyleBackColor = true;
+            this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
             // WindowSort
             // 
@@ -102,7 +111,10 @@
             this.Controls.Add(this.SplitSort);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "WindowSort";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sorting Books";

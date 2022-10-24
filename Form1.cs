@@ -16,5 +16,37 @@ namespace LibraryTrainer
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// NAVIGATION BUTTONS
+        /// </summary>
+        private void ButtonSort_Click(object sender, EventArgs e)
+        {
+            WindowSort windowSort = new WindowSort();
+            windowSort.Show();
+
+            this.Hide();
+        }
+
+        private void ButtonArea_Click(object sender, EventArgs e)
+        {
+            WindowAreas windowAreas = new WindowAreas();
+            windowAreas.Show();
+
+            this.Hide();
+        }
+
+        private void ButtonCall_Click(object sender, EventArgs e)
+        {
+            WindowCall windowCall = new WindowCall();
+            windowCall.Show();
+
+            this.Hide();
+        }
+
+        private void ButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

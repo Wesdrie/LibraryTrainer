@@ -16,5 +16,21 @@ namespace LibraryTrainer
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// NAVIGATION BUTTONS
+        /// </summary>
+        private void ButtonReset_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ButtonBack_Click(object sender, EventArgs e)
+        {
+            WindowMain windowMain = new WindowMain();
+            windowMain.Show();
+
+            this.Close();
+        }
     }
 }

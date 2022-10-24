@@ -73,6 +73,7 @@
             this.ButtonExit.TabIndex = 0;
             this.ButtonExit.Text = "Exit";
             this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // ButtonCall
             // 
@@ -87,6 +88,7 @@
             this.ButtonCall.TabIndex = 0;
             this.ButtonCall.Text = "Call Numbers";
             this.ButtonCall.UseVisualStyleBackColor = true;
+            this.ButtonCall.Click += new System.EventHandler(this.ButtonCall_Click);
             // 
             // ButtonArea
             // 
@@ -101,6 +103,7 @@
             this.ButtonArea.TabIndex = 0;
             this.ButtonArea.Text = "Identifying Areas";
             this.ButtonArea.UseVisualStyleBackColor = true;
+            this.ButtonArea.Click += new System.EventHandler(this.ButtonArea_Click);
             // 
             // ButtonSort
             // 
@@ -115,6 +118,7 @@
             this.ButtonSort.TabIndex = 0;
             this.ButtonSort.Text = "Book Sorting";
             this.ButtonSort.UseVisualStyleBackColor = true;
+            this.ButtonSort.Click += new System.EventHandler(this.ButtonSort_Click);
             // 
             // WindowMain
             // 
