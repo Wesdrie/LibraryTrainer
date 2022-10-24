@@ -41,6 +41,8 @@
             this.TextBeat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TimerSort = new System.Windows.Forms.Timer(this.components);
+            this.TextInstructions = new System.Windows.Forms.Label();
+            this.TextWords = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).BeginInit();
             this.SplitSort.Panel1.SuspendLayout();
             this.SplitSort.Panel2.SuspendLayout();
@@ -63,6 +65,8 @@
             // SplitSort.Panel2
             // 
             this.SplitSort.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.SplitSort.Panel2.Controls.Add(this.TextWords);
+            this.SplitSort.Panel2.Controls.Add(this.TextInstructions);
             this.SplitSort.Panel2.Controls.Add(this.ListSort);
             this.SplitSort.Panel2.Controls.Add(this.label5);
             this.SplitSort.Panel2.Controls.Add(this.label4);
@@ -170,7 +174,7 @@
             this.TimeLabel.Name = "TimeLabel";
             this.TimeLabel.Size = new System.Drawing.Size(100, 19);
             this.TimeLabel.TabIndex = 0;
-            this.TimeLabel.Text = "0";
+            this.TimeLabel.Text = "0 Seconds";
             this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TextBeat
@@ -190,13 +194,34 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
             this.label1.TabIndex = 0;
-            this.label1.Text = "0";
+            this.label1.Text = "0 Seconds";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimerSort
             // 
             this.TimerSort.Interval = 1000;
             this.TimerSort.Tick += new System.EventHandler(this.TimerSort_Tick);
+            // 
+            // TextInstructions
+            // 
+            this.TextInstructions.Location = new System.Drawing.Point(315, 30);
+            this.TextInstructions.Margin = new System.Windows.Forms.Padding(0);
+            this.TextInstructions.Name = "TextInstructions";
+            this.TextInstructions.Size = new System.Drawing.Size(100, 19);
+            this.TextInstructions.TabIndex = 0;
+            this.TextInstructions.Text = "Instructions";
+            this.TextInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TextWords
+            // 
+            this.TextWords.Location = new System.Drawing.Point(315, 50);
+            this.TextWords.Margin = new System.Windows.Forms.Padding(0);
+            this.TextWords.Name = "TextWords";
+            this.TextWords.Size = new System.Drawing.Size(100, 139);
+            this.TextWords.TabIndex = 0;
+            this.TextWords.Text = "\"Drag \'n Drop! Sort The Displayed List Of Dewey Decimal Items In Acsending Order!" +
+    "\"";
+            this.TextWords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WindowSort
             // 
@@ -237,5 +262,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox ListSort;
         private System.Windows.Forms.Timer TimerSort;
+        private System.Windows.Forms.Label TextInstructions;
+        private System.Windows.Forms.Label TextWords;
     }
 }
