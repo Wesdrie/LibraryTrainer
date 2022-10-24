@@ -33,6 +33,8 @@
             this.ButtonComplete = new System.Windows.Forms.Button();
             this.ButtonReset = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
+            this.TextWords = new System.Windows.Forms.Label();
+            this.TextInstructions = new System.Windows.Forms.Label();
             this.ListSort = new System.Windows.Forms.ListBox();
             this.TextScore = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,8 +43,6 @@
             this.TextBeat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.TimerSort = new System.Windows.Forms.Timer(this.components);
-            this.TextInstructions = new System.Windows.Forms.Label();
-            this.TextWords = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).BeginInit();
             this.SplitSort.Panel1.SuspendLayout();
             this.SplitSort.Panel2.SuspendLayout();
@@ -124,8 +124,30 @@
             this.ButtonBack.UseVisualStyleBackColor = true;
             this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
+            // TextWords
+            // 
+            this.TextWords.Location = new System.Drawing.Point(315, 50);
+            this.TextWords.Margin = new System.Windows.Forms.Padding(0);
+            this.TextWords.Name = "TextWords";
+            this.TextWords.Size = new System.Drawing.Size(100, 139);
+            this.TextWords.TabIndex = 0;
+            this.TextWords.Text = "\"Drag \'n Drop! Sort The Displayed List Of Dewey Decimal Items In Acsending Order!" +
+    "\"";
+            this.TextWords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TextInstructions
+            // 
+            this.TextInstructions.Location = new System.Drawing.Point(315, 30);
+            this.TextInstructions.Margin = new System.Windows.Forms.Padding(0);
+            this.TextInstructions.Name = "TextInstructions";
+            this.TextInstructions.Size = new System.Drawing.Size(100, 19);
+            this.TextInstructions.TabIndex = 0;
+            this.TextInstructions.Text = "Instructions";
+            this.TextInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // ListSort
             // 
+            this.ListSort.AllowDrop = true;
             this.ListSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.ListSort.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
@@ -136,6 +158,9 @@
             this.ListSort.Name = "ListSort";
             this.ListSort.Size = new System.Drawing.Size(120, 289);
             this.ListSort.TabIndex = 0;
+            this.ListSort.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListSort_DragDrop);
+            this.ListSort.DragOver += new System.Windows.Forms.DragEventHandler(this.ListSort_DragOver);
+            this.ListSort.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ListSort_MouseDown);
             // 
             // TextScore
             // 
@@ -201,27 +226,6 @@
             // 
             this.TimerSort.Interval = 1000;
             this.TimerSort.Tick += new System.EventHandler(this.TimerSort_Tick);
-            // 
-            // TextInstructions
-            // 
-            this.TextInstructions.Location = new System.Drawing.Point(315, 30);
-            this.TextInstructions.Margin = new System.Windows.Forms.Padding(0);
-            this.TextInstructions.Name = "TextInstructions";
-            this.TextInstructions.Size = new System.Drawing.Size(100, 19);
-            this.TextInstructions.TabIndex = 0;
-            this.TextInstructions.Text = "Instructions";
-            this.TextInstructions.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TextWords
-            // 
-            this.TextWords.Location = new System.Drawing.Point(315, 50);
-            this.TextWords.Margin = new System.Windows.Forms.Padding(0);
-            this.TextWords.Name = "TextWords";
-            this.TextWords.Size = new System.Drawing.Size(100, 139);
-            this.TextWords.TabIndex = 0;
-            this.TextWords.Text = "\"Drag \'n Drop! Sort The Displayed List Of Dewey Decimal Items In Acsending Order!" +
-    "\"";
-            this.TextWords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WindowSort
             // 

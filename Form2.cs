@@ -81,6 +81,53 @@ namespace LibraryTrainer
         }
 
         /// <summary>
+        /// DRAG & DROP REORDER
+        /// </summary>
+        private void ListSort_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                ListSort.DoDragDrop(ListSort.SelectedItem, DragDropEffects.Move);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ListSort_DragOver(object sender, DragEventArgs e)
+        {
+            try
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ListSort_DragDrop(object sender, DragEventArgs e)
+        {
+            try
+            {
+                Point point = ListSort.PointToClient(new Point(e.X, e.Y));
+                int index = ListSort.IndexFromPoint(point);
+                if (index < 0)
+                {
+                    index = ListSort.Items.Count - 1;
+                }
+
+                ListSort.Items.Remove(e.Data.GetData(DataFormats.Text));
+                ListSort.Items.Insert(index, e.Data.GetData(DataFormats.Text));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
         /// NAVIGATION BUTTONS & ENSURE APPLICAITON CLOSES
         /// </summary>
         private void ButtonComplete_Click(object sender, EventArgs e)
