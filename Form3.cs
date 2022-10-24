@@ -18,6 +18,33 @@ namespace LibraryTrainer
         /// </summary>
         Tools wrench = new Tools();
 
+        Dictionary<string, string> dictionaryAreas = new Dictionary<string, string>()
+        {
+            {"000 - 099", "Basic Information, Encyclopedias & Record Books"},
+            {"100 - 199", "Paranormal Phenomena, Ethics & “Who Am I”"},
+            {"200 - 299", "Christians, Hindus & Mythology"},
+            {"300 - 399", "Laws, Cultures & Folklore"},
+            {"400 - 499", "Dictionaries, Speech & Sign Language"},
+            {"500 - 599", "Physics, Chemistry & Biology"},
+            {"600 - 699", "Inventions, Robots & Transportation"},
+            {"700 - 799", "Comics, Music & Sports"},
+            {"800 - 899", "Shakespeare, Classic Literature & Riddles"},
+            {"900 - 999", "Exploration, Countries & Factual Events"}
+        };
+        Dictionary<string, string> dictionaryNumbers = new Dictionary<string, string>()
+        {
+            {"000 - 099", "General Works"},
+            {"100 - 199", "Philosophy & Psychology"},
+            {"200 - 299", "Religion"},
+            {"300 - 399", "Social Sciences"},
+            {"400 - 499", "Languages"},
+            {"500 - 599", "Science"},
+            {"600 - 699", "Technology"},
+            {"700 - 799", "The Arts"},
+            {"800 - 899", "Literature & Rhetoric"},
+            {"900 - 999", "History & Geography"}
+        };
+
         int timerTicker, userScore;
         public WindowAreas()
         {
@@ -33,6 +60,12 @@ namespace LibraryTrainer
                 /// <remarks>
                 /// CONNECT TO DATABASE TO PULL SCORES
                 /// </remarks>
+                
+                /// <remarks>
+                /// IMPLEMENTS DICITONARY
+                /// </remarks>
+                
+
 
                 TimerAreas.Start();
             }

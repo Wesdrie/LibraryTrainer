@@ -58,6 +58,8 @@
             // 
             // SplitSort.Panel1
             // 
+            this.SplitSort.Panel1.Controls.Add(this.TextWords);
+            this.SplitSort.Panel1.Controls.Add(this.TextInstructions);
             this.SplitSort.Panel1.Controls.Add(this.ButtonComplete);
             this.SplitSort.Panel1.Controls.Add(this.ButtonReset);
             this.SplitSort.Panel1.Controls.Add(this.ButtonBack);
@@ -65,8 +67,6 @@
             // SplitSort.Panel2
             // 
             this.SplitSort.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.SplitSort.Panel2.Controls.Add(this.TextWords);
-            this.SplitSort.Panel2.Controls.Add(this.TextInstructions);
             this.SplitSort.Panel2.Controls.Add(this.ListSort);
             this.SplitSort.Panel2.Controls.Add(this.TextScore);
             this.SplitSort.Panel2.Controls.Add(this.LabelScore);
@@ -126,7 +126,7 @@
             // 
             // TextWords
             // 
-            this.TextWords.Location = new System.Drawing.Point(315, 50);
+            this.TextWords.Location = new System.Drawing.Point(50, 130);
             this.TextWords.Margin = new System.Windows.Forms.Padding(0);
             this.TextWords.Name = "TextWords";
             this.TextWords.Size = new System.Drawing.Size(100, 139);
@@ -137,7 +137,8 @@
             // 
             // TextInstructions
             // 
-            this.TextInstructions.Location = new System.Drawing.Point(315, 30);
+            this.TextInstructions.Font = new System.Drawing.Font("Segoe UI", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.TextInstructions.Location = new System.Drawing.Point(50, 115);
             this.TextInstructions.Margin = new System.Windows.Forms.Padding(0);
             this.TextInstructions.Name = "TextInstructions";
             this.TextInstructions.Size = new System.Drawing.Size(100, 19);
@@ -153,7 +154,7 @@
             this.ListSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ListSort.FormattingEnabled = true;
             this.ListSort.ItemHeight = 17;
-            this.ListSort.Location = new System.Drawing.Point(170, 30);
+            this.ListSort.Location = new System.Drawing.Point(150, 30);
             this.ListSort.Margin = new System.Windows.Forms.Padding(0);
             this.ListSort.Name = "ListSort";
             this.ListSort.Size = new System.Drawing.Size(120, 289);

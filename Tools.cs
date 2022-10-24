@@ -43,7 +43,7 @@ namespace LibraryTrainer
             return deweyValue;
         }
 
-        public int CustomCheck(List<String> controlList, List<String> userList)
+        public int CheckDecimal(List<String> controlList, List<String> userList)
         {
             List<int> checkList = new List<int>();
             int valueOne = 0;

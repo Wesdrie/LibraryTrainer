@@ -75,7 +75,7 @@ namespace LibraryTrainer
                     userDecimals.Add(item.ToString());
                 }
 
-                userScore = wrench.CustomCheck(sortedDecimals, userDecimals);
+                userScore = wrench.CheckDecimal(sortedDecimals, userDecimals);
                 TextScore.Text = userScore.ToString();
             }
             catch (Exception ex)
