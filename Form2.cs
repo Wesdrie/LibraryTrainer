@@ -66,7 +66,7 @@ namespace LibraryTrainer
             try
             {
                 timerTicker++;
-                TimeLabel.Text = timerTicker.ToString() + " Seconds";
+                TextTime.Text = timerTicker.ToString() + " Seconds";
 
                 userDecimals.Clear();
 
@@ -156,7 +156,7 @@ namespace LibraryTrainer
                 // MOVE TO TOOLS
                 TimerSort.Stop();
                 timerTicker = 0;
-                TimeLabel.Text = "0 Seconds";
+                TextTime.Text = "0 Seconds";
 
                 ListSort.Items.Clear();
 

@@ -34,7 +34,7 @@ namespace LibraryTrainer
                 /// CONNECT TO DATABASE TO PULL SCORES
                 /// </remarks>
 
-                TimerSort.Start();
+                TimerAreas.Start();
             }
             catch (Exception ex)
             {
@@ -47,17 +47,7 @@ namespace LibraryTrainer
             try
             {
                 timerTicker++;
-                TimeLabel.Text = timerTicker.ToString() + " Seconds";
-
-                userDecimals.Clear();
-
-                foreach (var item in ListSort.Items)
-                {
-                    userDecimals.Add(item.ToString());
-                }
-
-                userScore = wrench.CustomCheck(sortedDecimals, userDecimals);
-                TextScore.Text = userScore.ToString();
+                TextTime.Text = timerTicker.ToString() + " Seconds";
             }
             catch (Exception ex)
             {
@@ -72,7 +62,7 @@ namespace LibraryTrainer
         {
             try
             {
-                TimerSort.Stop();
+                TimerAreas.Stop();
                 /// <remarks>
                 /// CONNECT TO DATABASE TO SAVE ATTEMPT
                 /// </remarks>
@@ -87,11 +77,11 @@ namespace LibraryTrainer
         {
             try
             {
-                TimerSort.Stop();
+                TimerAreas.Stop();
                 timerTicker = 0;
-                TimeLabel.Text = "0 Seconds";
+                TextTime.Text = "0 Seconds";
 
-                TimerSort.Start();
+                TimerAreas.Start();
             }
             catch (Exception ex)
             {

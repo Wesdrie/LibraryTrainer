@@ -33,12 +33,12 @@
             this.ButtonComplete = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
             this.ButtonReset = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.TextScore = new System.Windows.Forms.Label();
+            this.LabelScore = new System.Windows.Forms.Label();
+            this.LabelTime = new System.Windows.Forms.Label();
+            this.TextTime = new System.Windows.Forms.Label();
+            this.LabelBeat = new System.Windows.Forms.Label();
             this.TextBeat = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.TimerAreas = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).BeginInit();
             this.SplitAreas.Panel1.SuspendLayout();
@@ -62,12 +62,12 @@
             // SplitAreas.Panel2
             // 
             this.SplitAreas.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.SplitAreas.Panel2.Controls.Add(this.label5);
-            this.SplitAreas.Panel2.Controls.Add(this.label4);
-            this.SplitAreas.Panel2.Controls.Add(this.label2);
-            this.SplitAreas.Panel2.Controls.Add(this.label3);
+            this.SplitAreas.Panel2.Controls.Add(this.TextScore);
+            this.SplitAreas.Panel2.Controls.Add(this.LabelScore);
+            this.SplitAreas.Panel2.Controls.Add(this.LabelTime);
+            this.SplitAreas.Panel2.Controls.Add(this.TextTime);
+            this.SplitAreas.Panel2.Controls.Add(this.LabelBeat);
             this.SplitAreas.Panel2.Controls.Add(this.TextBeat);
-            this.SplitAreas.Panel2.Controls.Add(this.label1);
             this.SplitAreas.Size = new System.Drawing.Size(634, 361);
             this.SplitAreas.SplitterDistance = 200;
             this.SplitAreas.SplitterWidth = 1;
@@ -118,65 +118,65 @@
             this.ButtonReset.UseVisualStyleBackColor = true;
             this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
             // 
-            // label5
+            // TextScore
             // 
-            this.label5.Location = new System.Drawing.Point(30, 300);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 19);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TextScore.Location = new System.Drawing.Point(30, 300);
+            this.TextScore.Margin = new System.Windows.Forms.Padding(0);
+            this.TextScore.Name = "TextScore";
+            this.TextScore.Size = new System.Drawing.Size(100, 19);
+            this.TextScore.TabIndex = 0;
+            this.TextScore.Text = "0";
+            this.TextScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // LabelScore
             // 
-            this.label4.Location = new System.Drawing.Point(30, 280);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 19);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Current Score";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelScore.Location = new System.Drawing.Point(30, 280);
+            this.LabelScore.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelScore.Name = "LabelScore";
+            this.LabelScore.Size = new System.Drawing.Size(100, 19);
+            this.LabelScore.TabIndex = 0;
+            this.LabelScore.Text = "Current Score";
+            this.LabelScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // LabelTime
             // 
-            this.label2.Location = new System.Drawing.Point(30, 150);
-            this.label2.Margin = new System.Windows.Forms.Padding(0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Current Time";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelTime.Location = new System.Drawing.Point(30, 150);
+            this.LabelTime.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelTime.Name = "LabelTime";
+            this.LabelTime.Size = new System.Drawing.Size(100, 19);
+            this.LabelTime.TabIndex = 0;
+            this.LabelTime.Text = "Current Time";
+            this.LabelTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // TextTime
             // 
-            this.label3.Location = new System.Drawing.Point(30, 170);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TextTime.Location = new System.Drawing.Point(30, 170);
+            this.TextTime.Margin = new System.Windows.Forms.Padding(0);
+            this.TextTime.Name = "TextTime";
+            this.TextTime.Size = new System.Drawing.Size(100, 19);
+            this.TextTime.TabIndex = 0;
+            this.TextTime.Text = "0 Seconds";
+            this.TextTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelBeat
+            // 
+            this.LabelBeat.Location = new System.Drawing.Point(30, 30);
+            this.LabelBeat.Margin = new System.Windows.Forms.Padding(0);
+            this.LabelBeat.Name = "LabelBeat";
+            this.LabelBeat.Size = new System.Drawing.Size(100, 19);
+            this.LabelBeat.TabIndex = 0;
+            this.LabelBeat.Text = "Time-To-Beat";
+            this.LabelBeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TextBeat
             // 
-            this.TextBeat.Location = new System.Drawing.Point(30, 30);
+            this.TextBeat.Location = new System.Drawing.Point(30, 50);
             this.TextBeat.Margin = new System.Windows.Forms.Padding(0);
             this.TextBeat.Name = "TextBeat";
             this.TextBeat.Size = new System.Drawing.Size(100, 19);
             this.TextBeat.TabIndex = 0;
-            this.TextBeat.Text = "Time-To-Beat";
+            this.TextBeat.Text = "0 Seconds";
             this.TextBeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(30, 50);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "0";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TimerAreas
             // 
@@ -215,12 +215,12 @@
         private System.Windows.Forms.Button ButtonReset;
         private System.Windows.Forms.Button ButtonBack;
         private System.Windows.Forms.Button ButtonComplete;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TextScore;
+        private System.Windows.Forms.Label LabelScore;
+        private System.Windows.Forms.Label LabelTime;
+        private System.Windows.Forms.Label TextTime;
+        private System.Windows.Forms.Label LabelBeat;
         private System.Windows.Forms.Label TextBeat;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer TimerAreas;
     }
 }
