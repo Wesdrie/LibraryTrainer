@@ -14,24 +14,25 @@ namespace LibraryTrainer
     public partial class WindowAreas : Form
     {
         Tools wrench = new Tools();
+        Random random = new Random();
 
         CallAreas[] callAreas =
         {
-            new CallAreas("000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
-            new CallAreas("100 - 199", "Philosophy & Psychology", "Paranormal Phenomena, Ethics & “Who Am I”"),
-            new CallAreas("200 - 299", "Religion", "Christians, Hindus & Mythology"),
-            new CallAreas("300 - 399", "Social Sciences", "Laws, Cultures & Folklore"),
-            new CallAreas("400 - 499", "Languages", "Dictionaries, Speech & Sign Language"),
-            new CallAreas("500 - 599", "Science", "Physics, Chemistry & Biology"),
-            new CallAreas("600 - 699", "Technology", "Inventions, Robots & Transportation"),
-            new CallAreas("700 - 799", "The Arts", "Comics, Music & Sports"),
-            new CallAreas("800 - 899", "Literature & Rhetoric", "Shakespeare, Classic Literature & Riddles"),
-            new CallAreas("900 - 999", "History & Geography", "Exploration, Countries & Factual Events"),
+            new CallAreas(0, "000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
+            new CallAreas(1, "100 - 199", "Philosophy & Psychology", "Paranormal Phenomena, Ethics & “Who Am I”"),
+            new CallAreas(2, "200 - 299", "Religion", "Christians, Hindus & Mythology"),
+            new CallAreas(3, "300 - 399", "Social Sciences", "Laws, Cultures & Folklore"),
+            new CallAreas(4, "400 - 499", "Languages", "Dictionaries, Speech & Sign Language"),
+            new CallAreas(5, "500 - 599", "Science", "Physics, Chemistry & Biology"),
+            new CallAreas(6, "600 - 699", "Technology", "Inventions, Robots & Transportation"),
+            new CallAreas(7, "700 - 799", "The Arts", "Comics, Music & Sports"),
+            new CallAreas(8, "800 - 899", "Literature & Rhetoric", "Shakespeare, Classic Literature & Riddles"),
+            new CallAreas(9, "900 - 999", "History & Geography", "Exploration, Countries & Factual Events"),
         };
 
-        Dictionary<string, CallAreas> allAreas = new Dictionary<string, CallAreas>();
+        Dictionary<int, CallAreas> areasDictionary = new Dictionary<int, CallAreas>();
 
-        int timerTicker, userScore;
+        int timerTicker, userScore, randomPicker;
         public WindowAreas()
         {
             InitializeComponent();
@@ -42,8 +43,25 @@ namespace LibraryTrainer
             {
                 foreach(CallAreas area in callAreas)
                 {
-                    allAreas.Add(area.AreaNumber, area);
-                    Console.WriteLine(area.AreaName);
+                    areasDictionary.Add(area.AreaIndex, area);
+                }
+
+                for(int i = 0; ListAreas.Items.Count < 4; i++)
+                {
+                    randomPicker = random.Next(9);
+                    if (!ListAreas.Items.Contains(areasDictionary[randomPicker].AreaNumber))
+                    {
+                        ListAreas.Items.Add(areasDictionary[randomPicker].AreaNumber);
+                    }
+                }
+
+                for (int i = 0; ListTexts.Items.Count < 7; i++)
+                {
+                    randomPicker = random.Next(9);
+                    if (!ListTexts.Items.Contains(areasDictionary[randomPicker].AreaName))
+                    {
+                        ListTexts.Items.Add(areasDictionary[randomPicker].AreaName);
+                    }
                 }
 
                 TimerAreas.Start();
