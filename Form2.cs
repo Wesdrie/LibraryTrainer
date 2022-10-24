@@ -18,6 +18,7 @@ namespace LibraryTrainer
         Tools wrench = new Tools();
 
         List<String> generatedDecimals = new List<String>();
+        List<String> sortedDecimals = new List<String>();
 
         int timerTicker;
 
@@ -36,11 +37,15 @@ namespace LibraryTrainer
             for(int i = 0; i < 10; i++)
             {
                 System.Threading.Thread.Sleep(10);
+
                 generatedDecimals.Add(wrench.GenerateDecimal());
+                sortedDecimals.Add(generatedDecimals[i]);
                 ListSort.Items.Add(generatedDecimals[i]);
+
                 System.Threading.Thread.Sleep(10);
-                Console.WriteLine();
             }
+
+            sortedDecimals.Sort();
         }
 
         private void TimerSort_Tick(object sender, EventArgs e)
