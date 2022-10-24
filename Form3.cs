@@ -19,6 +19,14 @@ namespace LibraryTrainer
         {
             new CallAreas("000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
             new CallAreas("100 - 199", "Philosophy & Psychology", "Paranormal Phenomena, Ethics & “Who Am I”"),
+            new CallAreas("200 - 299", "Religion", "Christians, Hindus & Mythology"),
+            new CallAreas("300 - 399", "Social Sciences", "Laws, Cultures & Folklore"),
+            new CallAreas("400 - 499", "Languages", "Dictionaries, Speech & Sign Language"),
+            new CallAreas("500 - 599", "Science", "Physics, Chemistry & Biology"),
+            new CallAreas("600 - 699", "Technology", "Inventions, Robots & Transportation"),
+            new CallAreas("700 - 799", "The Arts", "Comics, Music & Sports"),
+            new CallAreas("800 - 899", "Literature & Rhetoric", "Shakespeare, Classic Literature & Riddles"),
+            new CallAreas("900 - 999", "History & Geography", "Exploration, Countries & Factual Events"),
         };
 
         Dictionary<string, CallAreas> allAreas = new Dictionary<string, CallAreas>();
