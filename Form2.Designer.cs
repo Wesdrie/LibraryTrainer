@@ -32,8 +32,15 @@
             this.ButtonComplete = new System.Windows.Forms.Button();
             this.ButtonReset = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TextBeat = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).BeginInit();
             this.SplitSort.Panel1.SuspendLayout();
+            this.SplitSort.Panel2.SuspendLayout();
             this.SplitSort.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +60,12 @@
             // SplitSort.Panel2
             // 
             this.SplitSort.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.SplitSort.Panel2.Controls.Add(this.label5);
+            this.SplitSort.Panel2.Controls.Add(this.label4);
+            this.SplitSort.Panel2.Controls.Add(this.label2);
+            this.SplitSort.Panel2.Controls.Add(this.label3);
+            this.SplitSort.Panel2.Controls.Add(this.TextBeat);
+            this.SplitSort.Panel2.Controls.Add(this.label1);
             this.SplitSort.Size = new System.Drawing.Size(634, 361);
             this.SplitSort.SplitterDistance = 200;
             this.SplitSort.SplitterWidth = 1;
@@ -103,6 +116,66 @@
             this.ButtonBack.UseVisualStyleBackColor = true;
             this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(30, 300);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 19);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "0";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(30, 280);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 19);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "Current Score";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(30, 150);
+            this.label2.Margin = new System.Windows.Forms.Padding(0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(100, 19);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Current Time";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(30, 170);
+            this.label3.Margin = new System.Windows.Forms.Padding(0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 19);
+            this.label3.TabIndex = 9;
+            this.label3.Text = "0";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TextBeat
+            // 
+            this.TextBeat.Location = new System.Drawing.Point(30, 30);
+            this.TextBeat.Margin = new System.Windows.Forms.Padding(0);
+            this.TextBeat.Name = "TextBeat";
+            this.TextBeat.Size = new System.Drawing.Size(100, 19);
+            this.TextBeat.TabIndex = 6;
+            this.TextBeat.Text = "Time-To-Beat";
+            this.TextBeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(30, 50);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "0";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // WindowSort
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -119,6 +192,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sorting Books";
             this.SplitSort.Panel1.ResumeLayout(false);
+            this.SplitSort.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).EndInit();
             this.SplitSort.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -131,5 +205,11 @@
         private System.Windows.Forms.Button ButtonBack;
         private System.Windows.Forms.Button ButtonComplete;
         private System.Windows.Forms.Button ButtonReset;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TextBeat;
+        private System.Windows.Forms.Label label1;
     }
 }
