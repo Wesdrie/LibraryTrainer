@@ -1,6 +1,6 @@
 ﻿namespace LibraryTrainer
 {
-    partial class WindowSort
+    partial class WindowAreas
     {
         /// <summary>
         /// Required designer variable.
@@ -28,47 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SplitSort = new System.Windows.Forms.SplitContainer();
-            this.ButtonComplete = new System.Windows.Forms.Button();
+            this.SplitAreas = new System.Windows.Forms.SplitContainer();
             this.ButtonReset = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).BeginInit();
-            this.SplitSort.Panel1.SuspendLayout();
-            this.SplitSort.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).BeginInit();
+            this.SplitAreas.Panel1.SuspendLayout();
+            this.SplitAreas.SuspendLayout();
             this.SuspendLayout();
             // 
-            // SplitSort
+            // SplitAreas
             // 
-            this.SplitSort.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.SplitSort.Location = new System.Drawing.Point(0, 0);
-            this.SplitSort.Margin = new System.Windows.Forms.Padding(0);
-            this.SplitSort.Name = "SplitSort";
+            this.SplitAreas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.SplitAreas.Location = new System.Drawing.Point(0, 0);
+            this.SplitAreas.Margin = new System.Windows.Forms.Padding(0);
+            this.SplitAreas.Name = "SplitAreas";
             // 
-            // SplitSort.Panel1
+            // SplitAreas.Panel1
             // 
-            this.SplitSort.Panel1.Controls.Add(this.ButtonComplete);
-            this.SplitSort.Panel1.Controls.Add(this.ButtonReset);
-            this.SplitSort.Panel1.Controls.Add(this.ButtonBack);
+            this.SplitAreas.Panel1.Controls.Add(this.ButtonBack);
+            this.SplitAreas.Panel1.Controls.Add(this.button1);
+            this.SplitAreas.Panel1.Controls.Add(this.ButtonReset);
             // 
-            // SplitSort.Panel2
+            // SplitAreas.Panel2
             // 
-            this.SplitSort.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.SplitSort.Size = new System.Drawing.Size(634, 361);
-            this.SplitSort.SplitterDistance = 200;
-            this.SplitSort.SplitterWidth = 1;
-            this.SplitSort.TabIndex = 0;
-            // 
-            // ButtonComplete
-            // 
-            this.ButtonComplete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonComplete.FlatAppearance.BorderSize = 0;
-            this.ButtonComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonComplete.Location = new System.Drawing.Point(0, 45);
-            this.ButtonComplete.Name = "ButtonComplete";
-            this.ButtonComplete.Size = new System.Drawing.Size(200, 45);
-            this.ButtonComplete.TabIndex = 0;
-            this.ButtonComplete.Text = "Complete";
-            this.ButtonComplete.UseVisualStyleBackColor = true;
+            this.SplitAreas.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.SplitAreas.Size = new System.Drawing.Size(634, 361);
+            this.SplitAreas.SplitterDistance = 200;
+            this.SplitAreas.SplitterWidth = 1;
+            this.SplitAreas.TabIndex = 0;
             // 
             // ButtonReset
             // 
@@ -82,6 +70,18 @@
             this.ButtonReset.Text = "Reset";
             this.ButtonReset.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(0, 45);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(200, 45);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Reset";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // ButtonBack
             // 
             this.ButtonBack.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -94,30 +94,31 @@
             this.ButtonBack.Text = "Back";
             this.ButtonBack.UseVisualStyleBackColor = true;
             // 
-            // WindowSort
+            // WindowAreas
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
             this.ClientSize = new System.Drawing.Size(634, 361);
-            this.Controls.Add(this.SplitSort);
+            this.Controls.Add(this.SplitAreas);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "WindowSort";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sorting Books";
-            this.SplitSort.Panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).EndInit();
-            this.SplitSort.ResumeLayout(false);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Name = "WindowAreas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Identify Areas";
+            this.SplitAreas.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).EndInit();
+            this.SplitAreas.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer SplitSort;
-        private System.Windows.Forms.Button ButtonBack;
-        private System.Windows.Forms.Button ButtonComplete;
+        private System.Windows.Forms.SplitContainer SplitAreas;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ButtonReset;
+        private System.Windows.Forms.Button ButtonBack;
     }
 }

@@ -64,6 +64,8 @@
             // 
             this.ButtonExit.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.ButtonExit.FlatAppearance.BorderSize = 0;
+            this.ButtonExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.ButtonExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.ButtonExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonExit.Location = new System.Drawing.Point(0, 316);
             this.ButtonExit.Name = "ButtonExit";
@@ -77,6 +79,7 @@
             this.ButtonCall.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonCall.Enabled = false;
             this.ButtonCall.FlatAppearance.BorderSize = 0;
+            this.ButtonCall.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonCall.Location = new System.Drawing.Point(0, 90);
             this.ButtonCall.Name = "ButtonCall";
@@ -89,6 +92,8 @@
             // 
             this.ButtonArea.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonArea.FlatAppearance.BorderSize = 0;
+            this.ButtonArea.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonArea.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonArea.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonArea.Location = new System.Drawing.Point(0, 45);
             this.ButtonArea.Name = "ButtonArea";
@@ -101,6 +106,8 @@
             // 
             this.ButtonSort.Dock = System.Windows.Forms.DockStyle.Top;
             this.ButtonSort.FlatAppearance.BorderSize = 0;
+            this.ButtonSort.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonSort.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
             this.ButtonSort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ButtonSort.Location = new System.Drawing.Point(0, 0);
             this.ButtonSort.Name = "ButtonSort";
