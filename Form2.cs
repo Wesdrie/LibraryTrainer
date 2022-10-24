@@ -19,23 +19,34 @@ namespace LibraryTrainer
 
         List<String> generatedDecimals = new List<String>();
 
+        int timerTicker;
+
         public WindowSort()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// SORTING FUNCITONS
+        /// FORM FUNCITONS
         /// </summary>
         private void WindowSort_Load(object sender, EventArgs e)
         {
+            TimerSort.Start();
+
             for(int i = 0; i < 10; i++)
             {
                 System.Threading.Thread.Sleep(10);
                 generatedDecimals.Add(wrench.GenerateDecimal());
                 ListSort.Items.Add(generatedDecimals[i]);
                 System.Threading.Thread.Sleep(10);
+                Console.WriteLine();
             }
+        }
+
+        private void TimerSort_Tick(object sender, EventArgs e)
+        {
+            timerTicker++;
+            TimeLabel.Text = timerTicker.ToString() + " Seconds";
         }
 
         /// <summary>

@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SplitSort = new System.Windows.Forms.SplitContainer();
             this.ButtonComplete = new System.Windows.Forms.Button();
             this.ButtonReset = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
+            this.ListSort = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.TimeLabel = new System.Windows.Forms.Label();
             this.TextBeat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ListSort = new System.Windows.Forms.ListBox();
+            this.TimerSort = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).BeginInit();
             this.SplitSort.Panel1.SuspendLayout();
             this.SplitSort.Panel2.SuspendLayout();
@@ -65,7 +67,7 @@
             this.SplitSort.Panel2.Controls.Add(this.label5);
             this.SplitSort.Panel2.Controls.Add(this.label4);
             this.SplitSort.Panel2.Controls.Add(this.label2);
-            this.SplitSort.Panel2.Controls.Add(this.label3);
+            this.SplitSort.Panel2.Controls.Add(this.TimeLabel);
             this.SplitSort.Panel2.Controls.Add(this.TextBeat);
             this.SplitSort.Panel2.Controls.Add(this.label1);
             this.SplitSort.Size = new System.Drawing.Size(634, 361);
@@ -118,6 +120,19 @@
             this.ButtonBack.UseVisualStyleBackColor = true;
             this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
+            // ListSort
+            // 
+            this.ListSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.ListSort.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ListSort.FormattingEnabled = true;
+            this.ListSort.ItemHeight = 17;
+            this.ListSort.Location = new System.Drawing.Point(170, 30);
+            this.ListSort.Margin = new System.Windows.Forms.Padding(0);
+            this.ListSort.Name = "ListSort";
+            this.ListSort.Size = new System.Drawing.Size(120, 289);
+            this.ListSort.TabIndex = 0;
+            // 
             // label5
             // 
             this.label5.Location = new System.Drawing.Point(30, 300);
@@ -148,15 +163,15 @@
             this.label2.Text = "Current Time";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
+            // TimeLabel
             // 
-            this.label3.Location = new System.Drawing.Point(30, 170);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "0";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TimeLabel.Location = new System.Drawing.Point(30, 170);
+            this.TimeLabel.Margin = new System.Windows.Forms.Padding(0);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(100, 19);
+            this.TimeLabel.TabIndex = 0;
+            this.TimeLabel.Text = "0";
+            this.TimeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TextBeat
             // 
@@ -178,18 +193,10 @@
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // ListSort
+            // TimerSort
             // 
-            this.ListSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.ListSort.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
-            this.ListSort.FormattingEnabled = true;
-            this.ListSort.ItemHeight = 17;
-            this.ListSort.Location = new System.Drawing.Point(170, 30);
-            this.ListSort.Margin = new System.Windows.Forms.Padding(0);
-            this.ListSort.Name = "ListSort";
-            this.ListSort.Size = new System.Drawing.Size(120, 289);
-            this.ListSort.TabIndex = 0;
+            this.TimerSort.Interval = 1000;
+            this.TimerSort.Tick += new System.EventHandler(this.TimerSort_Tick);
             // 
             // WindowSort
             // 
@@ -225,9 +232,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label TimeLabel;
         private System.Windows.Forms.Label TextBeat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox ListSort;
+        private System.Windows.Forms.Timer TimerSort;
     }
 }
