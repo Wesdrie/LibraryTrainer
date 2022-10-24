@@ -46,6 +46,7 @@ namespace LibraryTrainer
 
         private void ButtonExit_Click(object sender, EventArgs e)
         {
+            Application.Exit();
             this.Close();
         }
     }

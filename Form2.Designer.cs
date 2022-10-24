@@ -38,6 +38,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TextBeat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ListSort = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).BeginInit();
             this.SplitSort.Panel1.SuspendLayout();
             this.SplitSort.Panel2.SuspendLayout();
@@ -60,6 +61,7 @@
             // SplitSort.Panel2
             // 
             this.SplitSort.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.SplitSort.Panel2.Controls.Add(this.ListSort);
             this.SplitSort.Panel2.Controls.Add(this.label5);
             this.SplitSort.Panel2.Controls.Add(this.label4);
             this.SplitSort.Panel2.Controls.Add(this.label2);
@@ -122,7 +124,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 19);
-            this.label5.TabIndex = 11;
+            this.label5.TabIndex = 0;
             this.label5.Text = "0";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -132,7 +134,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(100, 19);
-            this.label4.TabIndex = 10;
+            this.label4.TabIndex = 0;
             this.label4.Text = "Current Score";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -142,7 +144,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 8;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Current Time";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -152,7 +154,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 19);
-            this.label3.TabIndex = 9;
+            this.label3.TabIndex = 0;
             this.label3.Text = "0";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -162,7 +164,7 @@
             this.TextBeat.Margin = new System.Windows.Forms.Padding(0);
             this.TextBeat.Name = "TextBeat";
             this.TextBeat.Size = new System.Drawing.Size(100, 19);
-            this.TextBeat.TabIndex = 6;
+            this.TextBeat.TabIndex = 0;
             this.TextBeat.Text = "Time-To-Beat";
             this.TextBeat.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -172,9 +174,21 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 0;
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ListSort
+            // 
+            this.ListSort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.ListSort.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ListSort.FormattingEnabled = true;
+            this.ListSort.ItemHeight = 17;
+            this.ListSort.Location = new System.Drawing.Point(158, 30);
+            this.ListSort.Name = "ListSort";
+            this.ListSort.Size = new System.Drawing.Size(120, 289);
+            this.ListSort.TabIndex = 0;
             // 
             // WindowSort
             // 
@@ -211,5 +225,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label TextBeat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox ListSort;
     }
 }
