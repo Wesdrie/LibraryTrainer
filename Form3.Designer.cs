@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.SplitAreas = new System.Windows.Forms.SplitContainer();
-            this.ButtonReset = new System.Windows.Forms.Button();
-            this.ButtonBack = new System.Windows.Forms.Button();
             this.ButtonComplete = new System.Windows.Forms.Button();
+            this.ButtonBack = new System.Windows.Forms.Button();
+            this.ButtonReset = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.TextBeat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).BeginInit();
             this.SplitAreas.Panel1.SuspendLayout();
             this.SplitAreas.Panel2.SuspendLayout();
@@ -71,20 +71,19 @@
             this.SplitAreas.SplitterWidth = 1;
             this.SplitAreas.TabIndex = 0;
             // 
-            // ButtonReset
+            // ButtonComplete
             // 
-            this.ButtonReset.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonReset.FlatAppearance.BorderSize = 0;
-            this.ButtonReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
-            this.ButtonReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.ButtonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonReset.Location = new System.Drawing.Point(0, 0);
-            this.ButtonReset.Name = "ButtonReset";
-            this.ButtonReset.Size = new System.Drawing.Size(200, 45);
-            this.ButtonReset.TabIndex = 0;
-            this.ButtonReset.Text = "Reset";
-            this.ButtonReset.UseVisualStyleBackColor = true;
-            this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
+            this.ButtonComplete.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonComplete.FlatAppearance.BorderSize = 0;
+            this.ButtonComplete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonComplete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.ButtonComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonComplete.Location = new System.Drawing.Point(0, 45);
+            this.ButtonComplete.Name = "ButtonComplete";
+            this.ButtonComplete.Size = new System.Drawing.Size(200, 45);
+            this.ButtonComplete.TabIndex = 0;
+            this.ButtonComplete.Text = "Complete";
+            this.ButtonComplete.UseVisualStyleBackColor = true;
             // 
             // ButtonBack
             // 
@@ -101,19 +100,40 @@
             this.ButtonBack.UseVisualStyleBackColor = true;
             this.ButtonBack.Click += new System.EventHandler(this.ButtonBack_Click);
             // 
-            // ButtonComplete
+            // ButtonReset
             // 
-            this.ButtonComplete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ButtonComplete.FlatAppearance.BorderSize = 0;
-            this.ButtonComplete.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
-            this.ButtonComplete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
-            this.ButtonComplete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ButtonComplete.Location = new System.Drawing.Point(0, 45);
-            this.ButtonComplete.Name = "ButtonComplete";
-            this.ButtonComplete.Size = new System.Drawing.Size(200, 45);
-            this.ButtonComplete.TabIndex = 0;
-            this.ButtonComplete.Text = "Complete";
-            this.ButtonComplete.UseVisualStyleBackColor = true;
+            this.ButtonReset.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ButtonReset.FlatAppearance.BorderSize = 0;
+            this.ButtonReset.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(234)))), ((int)(((byte)(185)))));
+            this.ButtonReset.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(209)))), ((int)(((byte)(102)))));
+            this.ButtonReset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ButtonReset.Location = new System.Drawing.Point(0, 0);
+            this.ButtonReset.Name = "ButtonReset";
+            this.ButtonReset.Size = new System.Drawing.Size(200, 45);
+            this.ButtonReset.TabIndex = 0;
+            this.ButtonReset.Text = "Reset";
+            this.ButtonReset.UseVisualStyleBackColor = true;
+            this.ButtonReset.Click += new System.EventHandler(this.ButtonReset_Click);
+            // 
+            // label5
+            // 
+            this.label5.Location = new System.Drawing.Point(30, 300);
+            this.label5.Margin = new System.Windows.Forms.Padding(0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 19);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "0";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(30, 280);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 19);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Current Score";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label2
             // 
@@ -121,7 +141,7 @@
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 19);
-            this.label2.TabIndex = 2;
+            this.label2.TabIndex = 0;
             this.label2.Text = "Current Time";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -131,7 +151,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 19);
-            this.label3.TabIndex = 3;
+            this.label3.TabIndex = 0;
             this.label3.Text = "0";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -151,29 +171,9 @@
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(100, 19);
-            this.label1.TabIndex = 1;
+            this.label1.TabIndex = 0;
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label4
-            // 
-            this.label4.Location = new System.Drawing.Point(30, 280);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Current Score";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label5
-            // 
-            this.label5.Location = new System.Drawing.Point(30, 300);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 19);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // WindowAreas
             // 
@@ -185,7 +185,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Italic);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "WindowAreas";
