@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SplitAreas = new System.Windows.Forms.SplitContainer();
             this.ButtonComplete = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
@@ -38,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.TextBeat = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.TimerAreas = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).BeginInit();
             this.SplitAreas.Panel1.SuspendLayout();
             this.SplitAreas.Panel2.SuspendLayout();
@@ -176,6 +178,11 @@
             this.label1.Text = "0";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // TimerAreas
+            // 
+            this.TimerAreas.Interval = 1000;
+            this.TimerAreas.Tick += new System.EventHandler(this.TimerAreas_Tick);
+            // 
             // WindowAreas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -193,6 +200,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Identify Areas";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowAreas_FormClosing);
+            this.Load += new System.EventHandler(this.WindowAreas_Load);
             this.SplitAreas.Panel1.ResumeLayout(false);
             this.SplitAreas.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).EndInit();
@@ -213,5 +221,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label TextBeat;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer TimerAreas;
     }
 }
