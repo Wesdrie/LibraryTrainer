@@ -18,8 +18,13 @@ namespace LibraryTrainer
         }
 
         /// <summary>
-        /// NAVIGATION BUTTONS
+        /// NAVIGATION BUTTONS & ENSURE APPLICAITON CLOSES
         /// </summary>
+        private void ButtonComplete_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void ButtonReset_Click(object sender, EventArgs e)
         {
 
@@ -32,5 +37,11 @@ namespace LibraryTrainer
 
             this.Close();
         }
+
+        private void WindowAreas_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
     }
 }

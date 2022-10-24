@@ -185,7 +185,7 @@
             this.ListSort.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ListSort.FormattingEnabled = true;
             this.ListSort.ItemHeight = 17;
-            this.ListSort.Location = new System.Drawing.Point(150, 30);
+            this.ListSort.Location = new System.Drawing.Point(170, 30);
             this.ListSort.Margin = new System.Windows.Forms.Padding(0);
             this.ListSort.Name = "ListSort";
             this.ListSort.Size = new System.Drawing.Size(120, 289);
@@ -206,6 +206,8 @@
             this.Name = "WindowSort";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sorting Books";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowSort_FormClosing);
+            this.Load += new System.EventHandler(this.WindowSort_Load);
             this.SplitSort.Panel1.ResumeLayout(false);
             this.SplitSort.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitSort)).EndInit();

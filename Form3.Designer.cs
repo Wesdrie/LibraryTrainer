@@ -84,6 +84,7 @@
             this.ButtonComplete.TabIndex = 0;
             this.ButtonComplete.Text = "Complete";
             this.ButtonComplete.UseVisualStyleBackColor = true;
+            this.ButtonComplete.Click += new System.EventHandler(this.ButtonComplete_Click);
             // 
             // ButtonBack
             // 
@@ -191,6 +192,7 @@
             this.Name = "WindowAreas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Identify Areas";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowAreas_FormClosing);
             this.SplitAreas.Panel1.ResumeLayout(false);
             this.SplitAreas.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).EndInit();

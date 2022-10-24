@@ -18,7 +18,7 @@ namespace LibraryTrainer
         }
 
         /// <summary>
-        /// NAVIGATION BUTTONS
+        /// NAVIGATION BUTTONS & ENSURE APPLICAITON CLOSES
         /// </summary>
         private void ButtonSort_Click(object sender, EventArgs e)
         {
@@ -46,7 +46,12 @@ namespace LibraryTrainer
 
         private void ButtonExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
+        }
+
+        private void WindowMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

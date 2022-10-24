@@ -18,7 +18,15 @@ namespace LibraryTrainer
         }
 
         /// <summary>
-        /// NAVIGATION BUTTONS
+        /// SORTING FUNCITONS
+        /// </summary>
+        private void WindowSort_Load(object sender, EventArgs e)
+        {
+            Console.WriteLine("MARK");
+        }
+
+        /// <summary>
+        /// NAVIGATION BUTTONS & ENSURE APPLICAITON CLOSES
         /// </summary>
         private void ButtonReset_Click(object sender, EventArgs e)
         {
@@ -36,6 +44,11 @@ namespace LibraryTrainer
             windowMain.Show();
 
             this.Close();
+        }
+
+        private void WindowSort_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
