@@ -34,7 +34,7 @@
             this.ButtonReset = new System.Windows.Forms.Button();
             this.ButtonBack = new System.Windows.Forms.Button();
             this.ListSort = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.TextScore = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TimeLabel = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.SplitSort.Panel2.Controls.Add(this.TextWords);
             this.SplitSort.Panel2.Controls.Add(this.TextInstructions);
             this.SplitSort.Panel2.Controls.Add(this.ListSort);
-            this.SplitSort.Panel2.Controls.Add(this.label5);
+            this.SplitSort.Panel2.Controls.Add(this.TextScore);
             this.SplitSort.Panel2.Controls.Add(this.label4);
             this.SplitSort.Panel2.Controls.Add(this.label2);
             this.SplitSort.Panel2.Controls.Add(this.TimeLabel);
@@ -137,15 +137,15 @@
             this.ListSort.Size = new System.Drawing.Size(120, 289);
             this.ListSort.TabIndex = 0;
             // 
-            // label5
+            // TextScore
             // 
-            this.label5.Location = new System.Drawing.Point(30, 300);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 19);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "0";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.TextScore.Location = new System.Drawing.Point(30, 300);
+            this.TextScore.Margin = new System.Windows.Forms.Padding(0);
+            this.TextScore.Name = "TextScore";
+            this.TextScore.Size = new System.Drawing.Size(100, 19);
+            this.TextScore.TabIndex = 0;
+            this.TextScore.Text = "0";
+            this.TextScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label4
             // 
@@ -254,7 +254,7 @@
         private System.Windows.Forms.Button ButtonBack;
         private System.Windows.Forms.Button ButtonComplete;
         private System.Windows.Forms.Button ButtonReset;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label TextScore;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label TimeLabel;

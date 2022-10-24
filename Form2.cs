@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,8 +20,9 @@ namespace LibraryTrainer
 
         List<String> generatedDecimals = new List<String>();
         List<String> sortedDecimals = new List<String>();
+        List<String> userDecimals = new List<String>();
 
-        int timerTicker;
+        int timerTicker, userScore;
 
         public WindowSort()
         {
@@ -28,30 +30,54 @@ namespace LibraryTrainer
         }
 
         /// <summary>
-        /// FORM FUNCITONS
+        /// ON LOAD BEGIN TIMER, GENERATE ITEMS AND FILL LISTS FOR CHECKS
         /// </summary>
         private void WindowSort_Load(object sender, EventArgs e)
         {
-            TimerSort.Start();
-
-            for(int i = 0; i < 10; i++)
+            try
             {
-                System.Threading.Thread.Sleep(10);
+                TimerSort.Start();
 
-                generatedDecimals.Add(wrench.GenerateDecimal());
-                sortedDecimals.Add(generatedDecimals[i]);
-                ListSort.Items.Add(generatedDecimals[i]);
+                for (int i = 0; i < 10; i++)
+                {
+                    System.Threading.Thread.Sleep(10);
 
-                System.Threading.Thread.Sleep(10);
+                    generatedDecimals.Add(wrench.GenerateDecimal());
+                    sortedDecimals.Add(generatedDecimals[i]);
+                    ListSort.Items.Add(generatedDecimals[i]);
+
+                    System.Threading.Thread.Sleep(10);
+                }
+
+                sortedDecimals.Sort();
             }
-
-            sortedDecimals.Sort();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void TimerSort_Tick(object sender, EventArgs e)
         {
-            timerTicker++;
-            TimeLabel.Text = timerTicker.ToString() + " Seconds";
+            try
+            {
+                timerTicker++;
+                TimeLabel.Text = timerTicker.ToString() + " Seconds";
+
+                userDecimals.Clear();
+
+                foreach(var item in ListSort.Items)
+                {
+                    userDecimals.Add(item.ToString());
+                }
+
+                userScore = wrench.CustomCheck(sortedDecimals, userDecimals);
+                TextScore.Text = userScore.ToString();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         /// <summary>

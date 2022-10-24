@@ -42,5 +42,32 @@ namespace LibraryTrainer
 
             return deweyValue;
         }
+
+        public int CustomCheck(List<String> controlList, List<String> userList)
+        {
+            List<int> checkList = new List<int>();
+            int valueOne = 0;
+
+            checkList.Clear();
+
+            for (int i = 0; i < userList.Count; i++)
+            {
+                if (controlList[i].Equals(userList[i]))
+                {
+                    checkList.Add(1);
+                }
+                else
+                {
+                    checkList.Add(0);
+                }
+            }
+
+            foreach (int check in checkList)
+            {
+                valueOne = valueOne + check;
+            }
+
+            return valueOne;
+        }
     }
 }
