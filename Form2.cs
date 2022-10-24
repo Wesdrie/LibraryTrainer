@@ -90,7 +90,26 @@ namespace LibraryTrainer
 
         private void ButtonReset_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // MOVE TO TOOLS
+                TimerSort.Stop();
+                timerTicker = 0;
+                TimeLabel.Text = "0 Seconds";
 
+                ListSort.Items.Clear();
+
+                for (int i = 0; i < 10; i++)
+                {
+                    ListSort.Items.Add(generatedDecimals[i]);
+                }
+
+                TimerSort.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
 
         private void ButtonBack_Click(object sender, EventArgs e)
