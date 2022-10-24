@@ -18,38 +18,55 @@ namespace LibraryTrainer
         /// </summary>
         Tools wrench = new Tools();
 
-        Dictionary<string, string> dictionaryAreas = new Dictionary<string, string>()
+        CallAreas[] callAreas =
         {
-            {"000 - 099", "Basic Information, Encyclopedias & Record Books"},
-            {"100 - 199", "Paranormal Phenomena, Ethics & “Who Am I”"},
-            {"200 - 299", "Christians, Hindus & Mythology"},
-            {"300 - 399", "Laws, Cultures & Folklore"},
-            {"400 - 499", "Dictionaries, Speech & Sign Language"},
-            {"500 - 599", "Physics, Chemistry & Biology"},
-            {"600 - 699", "Inventions, Robots & Transportation"},
-            {"700 - 799", "Comics, Music & Sports"},
-            {"800 - 899", "Shakespeare, Classic Literature & Riddles"},
-            {"900 - 999", "Exploration, Countries & Factual Events"}
+            new CallAreas("000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
+            new CallAreas("100 - 199", "Philosophy & Psychology", "Paranormal Phenomena, Ethics & “Who Am I”"),
+            new CallAreas("200 - 299", "Religion", "Christians, Hindus & Mythology"),
+            new CallAreas("300 - 399", "Social Sciences", "Laws, Cultures & Folklore"),
+            new CallAreas("400 - 499", "Languages", "Dictionaries, Speech & Sign Language"),
+            new CallAreas("500 - 599", "Science", "Physics, Chemistry & Biology"),
+            new CallAreas("600 - 699", "Technology", "Inventions, Robots & Transportation"),
+            new CallAreas("700 - 799", "The Arts", "Comics, Music & Sports"),
+            new CallAreas("800 - 899", "Literature & Rhetoric", "Shakespeare, Classic Literature & Riddles"),
+            new CallAreas("900 - 999", "History & Geography", "Exploration, Countries & Factual Events")
         };
-        Dictionary<string, string> dictionaryNumbers = new Dictionary<string, string>()
-        {
-            {"000 - 099", "General Works"},
-            {"100 - 199", "Philosophy & Psychology"},
-            {"200 - 299", "Religion"},
-            {"300 - 399", "Social Sciences"},
-            {"400 - 499", "Languages"},
-            {"500 - 599", "Science"},
-            {"600 - 699", "Technology"},
-            {"700 - 799", "The Arts"},
-            {"800 - 899", "Literature & Rhetoric"},
-            {"900 - 999", "History & Geography"}
-        };
+
+        Dictionary<string, object> areaDictionary = new Dictionary<string, object>();
+
+        //Dictionary<string, string> dictionaryAreas = new Dictionary<string, string>()
+        //{
+        //    {"000 - 099", "Basic Information, Encyclopedias & Record Books"},
+        //    {"100 - 199", "Paranormal Phenomena, Ethics & “Who Am I”"},
+        //    {"200 - 299", "Christians, Hindus & Mythology"},
+        //    {"300 - 399", "Laws, Cultures & Folklore"},
+        //    {"400 - 499", "Dictionaries, Speech & Sign Language"},
+        //    {"500 - 599", "Physics, Chemistry & Biology"},
+        //    {"600 - 699", "Inventions, Robots & Transportation"},
+        //    {"700 - 799", "Comics, Music & Sports"},
+        //    {"800 - 899", "Shakespeare, Classic Literature & Riddles"},
+        //    {"900 - 999", "Exploration, Countries & Factual Events"}
+        //};
+        //Dictionary<string, string> dictionaryNumbers = new Dictionary<string, string>()
+        //{
+        //    {"000 - 099", "General Works"},
+        //    {"100 - 199", "Philosophy & Psychology"},
+        //    {"200 - 299", "Religion"},
+        //    {"300 - 399", "Social Sciences"},
+        //    {"400 - 499", "Languages"},
+        //    {"500 - 599", "Science"},
+        //    {"600 - 699", "Technology"},
+        //    {"700 - 799", "The Arts"},
+        //    {"800 - 899", "Literature & Rhetoric"},
+        //    {"900 - 999", "History & Geography"}
+        //};
 
         int timerTicker, userScore;
         public WindowAreas()
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// ON LOAD BEGIN TIMER, GENERATE ITEMS AND FILL LISTS FOR CHECKS
         /// </summary>
@@ -64,9 +81,11 @@ namespace LibraryTrainer
                 /// <remarks>
                 /// IMPLEMENTS DICITONARY
                 /// </remarks>
+                foreach(var area in callAreas)
+                {
+                    areaDictionary.Add(area.AreaNumber, area);
+                };
                 
-
-
                 TimerAreas.Start();
             }
             catch (Exception ex)
