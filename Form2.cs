@@ -12,6 +12,13 @@ namespace LibraryTrainer
 {
     public partial class WindowSort : Form
     {
+        /// <summary>
+        /// VARIBLES
+        /// </summary>
+        Tools wrench = new Tools();
+
+        List<String> generatedDecimals = new List<String>();
+
         public WindowSort()
         {
             InitializeComponent();
@@ -22,7 +29,13 @@ namespace LibraryTrainer
         /// </summary>
         private void WindowSort_Load(object sender, EventArgs e)
         {
-            
+            for(int i = 0; i < 10; i++)
+            {
+                System.Threading.Thread.Sleep(10);
+                generatedDecimals.Add(wrench.GenerateDecimal());
+                ListSort.Items.Add(generatedDecimals[i]);
+                System.Threading.Thread.Sleep(10);
+            }
         }
 
         /// <summary>
