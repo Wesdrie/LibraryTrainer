@@ -47,6 +47,7 @@ namespace LibraryTrainer
         List<String> textAreas = new List<String>();
 
         int timerTicker, userScore, randomPicker;
+        String valueOne, valueTwo;
         public WindowAreas()
         {
             InitializeComponent();
@@ -65,7 +66,6 @@ namespace LibraryTrainer
                 foreach(CallAreas area in callAreas)
                 {
                     areasDictionary.Add(area.AreaNumber, area.AreaName);
-                    Console.WriteLine(area.AreaNumber + " " + area.AreaName);
                 }
 
                 foreach(int i in randomAreas)
@@ -111,13 +111,16 @@ namespace LibraryTrainer
 
                 for(int i = 0; i < numberAreas.Count; i++)
                 {
-                    if (areasDictionary[numberAreas[i].ToString()];
+                    if (areasDictionary.ContainsKey(numberAreas[i]) && areasDictionary.ContainsValue(textAreas[i]))
                     {
-                        Console.WriteLine("1");
-                    }
-                    else
-                    {
-                        Console.WriteLine("2");
+                        areasDictionary.TryGetValue(numberAreas[i], out valueOne);
+                        
+                        if(valueOne == textAreas[i])
+                        {
+                            Console.WriteLine("asdfadsf");
+                        }
+
+                        Console.WriteLine("VALUE: " + valueOne + " " + "VALUE: " + valueTwo);
                     }
                 }
 
