@@ -42,11 +42,8 @@
             this.LabelBeat = new System.Windows.Forms.Label();
             this.TextBeat = new System.Windows.Forms.Label();
             this.TimerAreas = new System.Windows.Forms.Timer(this.components);
-            this.TextOne = new System.Windows.Forms.Label();
-            this.TextTwo = new System.Windows.Forms.Label();
-            this.TextFour = new System.Windows.Forms.Label();
-            this.TextThree = new System.Windows.Forms.Label();
             this.ListText = new System.Windows.Forms.ListBox();
+            this.ListNumbers = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.SplitAreas)).BeginInit();
             this.SplitAreas.Panel1.SuspendLayout();
             this.SplitAreas.Panel2.SuspendLayout();
@@ -71,11 +68,8 @@
             // SplitAreas.Panel2
             // 
             this.SplitAreas.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.SplitAreas.Panel2.Controls.Add(this.ListNumbers);
             this.SplitAreas.Panel2.Controls.Add(this.ListText);
-            this.SplitAreas.Panel2.Controls.Add(this.TextFour);
-            this.SplitAreas.Panel2.Controls.Add(this.TextThree);
-            this.SplitAreas.Panel2.Controls.Add(this.TextTwo);
-            this.SplitAreas.Panel2.Controls.Add(this.TextOne);
             this.SplitAreas.Panel2.Controls.Add(this.TextScore);
             this.SplitAreas.Panel2.Controls.Add(this.LabelScore);
             this.SplitAreas.Panel2.Controls.Add(this.LabelTime);
@@ -219,42 +213,6 @@
             this.TimerAreas.Interval = 1000;
             this.TimerAreas.Tick += new System.EventHandler(this.TimerAreas_Tick);
             // 
-            // TextOne
-            // 
-            this.TextOne.Location = new System.Drawing.Point(162, 30);
-            this.TextOne.Margin = new System.Windows.Forms.Padding(0);
-            this.TextOne.Name = "TextOne";
-            this.TextOne.Size = new System.Drawing.Size(100, 19);
-            this.TextOne.TabIndex = 0;
-            this.TextOne.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TextTwo
-            // 
-            this.TextTwo.Location = new System.Drawing.Point(162, 115);
-            this.TextTwo.Margin = new System.Windows.Forms.Padding(0);
-            this.TextTwo.Name = "TextTwo";
-            this.TextTwo.Size = new System.Drawing.Size(100, 19);
-            this.TextTwo.TabIndex = 0;
-            this.TextTwo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TextFour
-            // 
-            this.TextFour.Location = new System.Drawing.Point(162, 287);
-            this.TextFour.Margin = new System.Windows.Forms.Padding(0);
-            this.TextFour.Name = "TextFour";
-            this.TextFour.Size = new System.Drawing.Size(100, 19);
-            this.TextFour.TabIndex = 0;
-            this.TextFour.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // TextThree
-            // 
-            this.TextThree.Location = new System.Drawing.Point(162, 202);
-            this.TextThree.Margin = new System.Windows.Forms.Padding(0);
-            this.TextThree.Name = "TextThree";
-            this.TextThree.Size = new System.Drawing.Size(100, 19);
-            this.TextThree.TabIndex = 0;
-            this.TextThree.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // ListText
             // 
             this.ListText.AllowDrop = true;
@@ -263,11 +221,25 @@
             this.ListText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ListText.FormattingEnabled = true;
             this.ListText.ItemHeight = 17;
-            this.ListText.Location = new System.Drawing.Point(280, 30);
+            this.ListText.Location = new System.Drawing.Point(290, 30);
             this.ListText.Margin = new System.Windows.Forms.Padding(0);
             this.ListText.Name = "ListText";
             this.ListText.Size = new System.Drawing.Size(120, 289);
             this.ListText.TabIndex = 0;
+            // 
+            // ListNumbers
+            // 
+            this.ListNumbers.AllowDrop = true;
+            this.ListNumbers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.ListNumbers.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListNumbers.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
+            this.ListNumbers.FormattingEnabled = true;
+            this.ListNumbers.ItemHeight = 17;
+            this.ListNumbers.Location = new System.Drawing.Point(150, 30);
+            this.ListNumbers.Margin = new System.Windows.Forms.Padding(0);
+            this.ListNumbers.Name = "ListNumbers";
+            this.ListNumbers.Size = new System.Drawing.Size(120, 289);
+            this.ListNumbers.TabIndex = 1;
             // 
             // WindowAreas
             // 
@@ -310,10 +282,7 @@
         private System.Windows.Forms.Timer TimerAreas;
         private System.Windows.Forms.Label TextWords;
         private System.Windows.Forms.Label TextInstructions;
-        private System.Windows.Forms.Label TextFour;
-        private System.Windows.Forms.Label TextThree;
-        private System.Windows.Forms.Label TextTwo;
-        private System.Windows.Forms.Label TextOne;
         private System.Windows.Forms.ListBox ListText;
+        private System.Windows.Forms.ListBox ListNumbers;
     }
 }

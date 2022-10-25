@@ -53,9 +53,14 @@ namespace LibraryTrainer
                 foreach(int i in randomAreas)
                 {
                     ListText.Items.Add(areasDictionary[i].AreaDescription);
+                    Console.WriteLine(i);
+                    Console.WriteLine(areasDictionary[i].AreaNumber);
                 }
 
-                //TextOne.Text = placeHolder.AreaName.ToString();
+                for(int i = 0; i < 4; i++)
+                {
+                    ListNumbers.Items.Add(areasDictionary[randomAreas[i+1]].AreaNumber);
+                }
 
                 TimerAreas.Start();
             }
