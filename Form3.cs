@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
 
 namespace LibraryTrainer
@@ -42,12 +43,13 @@ namespace LibraryTrainer
         Dictionary<int, int> randomDictionary = new Dictionary<int, int>();
 
         List<int> randomAreas = new List<int>();
+        List<int> userScores = new List<int>();
         List<String> userAreas = new List<String>();
         List<String> numberAreas = new List<String>();
         List<String> textAreas = new List<String>();
 
-        int timerTicker, userScore, randomPicker;
-        String valueOne, valueTwo;
+        int timerTicker, userScore;
+        String valueOne;
         public WindowAreas()
         {
             InitializeComponent();
@@ -96,6 +98,8 @@ namespace LibraryTrainer
                 timerTicker++;
                 TextTime.Text = timerTicker.ToString() + " Seconds";
 
+                numberAreas.Clear();
+                textAreas.Clear();
                 userAreas.Clear();
 
                 foreach (var item in ListNumbers.Items)
@@ -109,23 +113,15 @@ namespace LibraryTrainer
                     textAreas.Add(item.ToString());
                 }
 
-                for(int i = 0; i < numberAreas.Count; i++)
+                for (int i = 0; i < numberAreas.Count; i++)
                 {
-                    if (areasDictionary.ContainsKey(numberAreas[i]) && areasDictionary.ContainsValue(textAreas[i]))
-                    {
-                        areasDictionary.TryGetValue(numberAreas[i], out valueOne);
-                        
-                        if(valueOne == textAreas[i])
-                        {
-                            Console.WriteLine("asdfadsf");
-                        }
-
-                        Console.WriteLine("VALUE: " + valueOne + " " + "VALUE: " + valueTwo);
-                    }
+                    areasDictionary.TryGetValue(numberAreas[i], out valueOne);
+                    userAreas.Add(valueOne);
                 }
 
-                //userScore = wrench.CheckDecimal(sortedDecimals, userDecimals);
-                //TextScore.Text = userScore.ToString();
+                userScore = wrench.CheckAreas(userAreas, textAreas);
+
+                TextScore.Text = userScore.ToString();
             }
             catch (Exception ex)
             {
