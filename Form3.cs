@@ -31,6 +31,8 @@ namespace LibraryTrainer
         };
 
         Dictionary<int, CallAreas> areasDictionary = new Dictionary<int, CallAreas>();
+        Dictionary<int, int> randomDictionary = new Dictionary<int, int>();
+
         List<int> randomAreas = new List<int>();
         int timerTicker, userScore, randomPicker;
         public WindowAreas()
@@ -41,12 +43,19 @@ namespace LibraryTrainer
         {
             try
             {
+                randomAreas.AddRange(wrench.RandomAreas());
+
                 foreach(CallAreas area in callAreas)
                 {
                     areasDictionary.Add(area.AreaIndex, area);
                 }
 
-                randomAreas.AddRange(wrench.RandomAreas());
+                foreach(int i in randomAreas)
+                {
+                    ListText.Items.Add(areasDictionary[i].AreaDescription);
+                }
+
+                //TextOne.Text = placeHolder.AreaName.ToString();
 
                 TimerAreas.Start();
             }

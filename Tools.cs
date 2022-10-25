@@ -81,7 +81,17 @@ namespace LibraryTrainer
             for(int i = 0; i < 7; i++)
             {
                 randomNumber = random.Next(9);
-                listOne.Add(i); 
+
+                if (!listOne.Contains(randomNumber))
+                {
+                    System.Threading.Thread.Sleep(10);
+                    listOne.Add(randomNumber);
+                    System.Threading.Thread.Sleep(10);
+                }
+                else
+                {
+                    i--;
+                }
             }
 
             return listOne;
