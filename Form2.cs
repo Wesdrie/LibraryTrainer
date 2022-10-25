@@ -17,7 +17,7 @@ namespace LibraryTrainer
         /// <summary>
         /// DATABASE CONNECTION
         /// </summary>
-        String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hendr\\Source\\Repos\\Wesdrie\\LibraryTrainer\\Database1.mdf;Integrated Security=True";
+        String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\LibraryDatabase.mdf;Integrated Security = True";
         String insertCommand = "INSERT INTO SORT (SORT_ID, SORT_TIME, SORT_SCORE) VALUES (@A, @B, @C);";
         String readCommand = "SELECT MIN(SORT_TIME) AS DISPLAYTIME FROM SORT;";
         String idCommand = "SELECT MAX(SORT_ID) AS DATAID FROM SORT;";

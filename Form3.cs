@@ -22,7 +22,7 @@ namespace LibraryTrainer
         /// DECLARE OBJECT, DICTIONAREIS & ASSOICATED DATA. NEED TO MOVE DATA DB.
         /// DECLARE LISTS & REMAINING VARIABLES.
         /// </summary>
-        String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hendr\\Source\\Repos\\Wesdrie\\LibraryTrainer\\Database1.mdf;Integrated Security=True";
+        String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\LibraryDatabase.mdf;Integrated Security = True";
         String insertCommand = "INSERT INTO AREA (AREA_ID, AREA_TIME, AREA_SCORE) VALUES (@A, @B, @C);";
         String readCommand = "SELECT MIN(AREA_TIME) AS DISPLAYTIME FROM AREA;";
         String idCommand = "SELECT MAX(AREA_ID) AS DATAID FROM AREA;";

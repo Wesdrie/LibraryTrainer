@@ -33,5 +33,16 @@ namespace LibraryTrainer.Properties {
                 return ((string)(this["DatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\\LibraryDataba" +
+            "se.mdf;Integrated Security=True")]
+        public string LibraryDatabaseConnectionString {
+            get {
+                return ((string)(this["LibraryDatabaseConnectionString"]));
+            }
+        }
     }
 }
