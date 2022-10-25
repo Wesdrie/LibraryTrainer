@@ -158,8 +158,9 @@
             this.ListNumbers.Location = new System.Drawing.Point(150, 30);
             this.ListNumbers.Margin = new System.Windows.Forms.Padding(0);
             this.ListNumbers.Name = "ListNumbers";
+            this.ListNumbers.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.ListNumbers.Size = new System.Drawing.Size(60, 289);
-            this.ListNumbers.TabIndex = 1;
+            this.ListNumbers.TabIndex = 0;
             // 
             // ListText
             // 

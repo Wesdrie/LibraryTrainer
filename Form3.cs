@@ -198,9 +198,19 @@ namespace LibraryTrainer
         {
             try
             {
+                /// <summary>
+                /// MAYBE BEST TO MOVE FUNCTION TO TOOLS
+                /// </summary>
                 TimerAreas.Stop();
                 timerTicker = 0;
                 TextTime.Text = "0 Seconds";
+
+                ListText.Items.Clear();
+
+                foreach (int i in randomAreas)
+                {
+                    ListText.Items.Add(areasDictionary.ElementAt(i).Value);
+                }
 
                 TimerAreas.Start();
             }
