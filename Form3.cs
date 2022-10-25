@@ -22,7 +22,7 @@ namespace LibraryTrainer
 
         /// <summary>
         /// PREDETERMINED DICTIONARY VALUES.
-        /// CREATED AS OBJECT TO REFERNCE MORE INFROMATION.
+        /// CREATED AS OBJECT TO REFERNCE MORE INFROMATION OR SWAP INFROMATION DISPLAYED.
         /// NEEDS TO BE STORED ON DB.
         /// </summary>
         CallAreas[] callAreas =
