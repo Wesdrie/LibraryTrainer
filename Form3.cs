@@ -38,7 +38,7 @@ namespace LibraryTrainer
             new CallAreas("900 - 999", "History & Geography", "Exploration, Countries & Factual Events"),
         };
 
-        Dictionary<String, CallAreas> areasDictionary = new Dictionary<String, CallAreas>();
+        Dictionary<String, String> areasDictionary = new Dictionary<String, String>();
         Dictionary<int, int> randomDictionary = new Dictionary<int, int>();
 
         List<int> randomAreas = new List<int>();
@@ -64,17 +64,17 @@ namespace LibraryTrainer
 
                 foreach(CallAreas area in callAreas)
                 {
-                    areasDictionary.Add(area.AreaNumber, area);
+                    areasDictionary.Add(area.AreaNumber, area.AreaName);
+                    Console.WriteLine(area.AreaNumber + " " + area.AreaName);
                 }
 
                 foreach(int i in randomAreas)
                 {
-                    ListText.Items.Add(areasDictionary.ElementAt(i).Key);
+                    ListText.Items.Add(areasDictionary.ElementAt(i).Value);
                 }
 
                 for(int i = 0; i < 4; i++)
                 {
-                    //ListNumbers.Items.Add(areasDictionary[randomAreas[i+1]].AreaNumber);
                     ListNumbers.Items.Add(areasDictionary.ElementAt(randomAreas[i + 1]).Key);
                 }
 
@@ -111,14 +111,14 @@ namespace LibraryTrainer
 
                 for(int i = 0; i < numberAreas.Count; i++)
                 {
-                    //if (areasDictionary[numberAreas[i].ToString()];
-                    //{
-                    //    Console.WriteLine("1");
-                    //}
-                    //else
-                    //{
-                    //    Console.WriteLine("2");
-                    //}
+                    if (areasDictionary[numberAreas[i].ToString()];
+                    {
+                        Console.WriteLine("1");
+                    }
+                    else
+                    {
+                        Console.WriteLine("2");
+                    }
                 }
 
                 //userScore = wrench.CheckDecimal(sortedDecimals, userDecimals);
