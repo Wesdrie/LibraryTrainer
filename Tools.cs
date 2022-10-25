@@ -115,11 +115,11 @@ namespace LibraryTrainer
         public int CheckAreas(List<String> areaList, List<String> textList)
         {
             List<int> checkList = new List<int>();
-            int valueOne = 0;
+            int valueTwo = 0;
 
             checkList.Clear();
 
-            for (int i = 0; i < textList.Count; i++)
+            for (int i = 0; i < areaList.Count; i++)
             {
                 if (areaList[i].Equals(textList[i]))
                 {
@@ -133,10 +133,10 @@ namespace LibraryTrainer
 
             foreach (int check in checkList)
             {
-                valueOne = valueOne + check;
+                valueTwo = valueTwo + check;
             }
 
-            return valueOne;
+            return valueTwo;
         }
     }
 }

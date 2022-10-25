@@ -106,7 +106,6 @@ namespace LibraryTrainer
                 {
                     numberAreas.Add(item.ToString());
                 }
-                numberAreas.Sort();
 
                 foreach (var item in ListText.Items)
                 {
@@ -126,6 +125,7 @@ namespace LibraryTrainer
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                Console.WriteLine("LORP");
             }
         }
 
