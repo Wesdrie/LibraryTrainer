@@ -185,12 +185,17 @@ namespace LibraryTrainer
 
                     if (row != 0)
                     {
-                        MessageBox.Show("Score Was Recorded", "Note", MessageBoxButtons.OK);
+                        MessageBox.Show("Game Infromation Was Recorded!", "Note", MessageBoxButtons.OK);
                     }
                     else
                     {
-                        MessageBox.Show("Score Was NOT Recorded", "Note", MessageBoxButtons.OK);
+                        MessageBox.Show("Game Infromation Was NOT Recorded!", "Note", MessageBoxButtons.OK);
                     }
+                }
+                else
+                {
+                    MessageBox.Show("You NEED A Score Of 10 Points To Submit!", "Note", MessageBoxButtons.OK);
+                    ButtonReset_Click(sender, e);
                 }
             }
             catch (Exception ex)
@@ -216,6 +221,17 @@ namespace LibraryTrainer
                 {
                     ListSort.Items.Add(generatedDecimals[i]);
                 }
+
+                sqlConnection.ConnectionString = connectionString;
+                SqlCommand sqlCommand = new SqlCommand(readCommand, sqlConnection);
+                sqlConnection.Open();
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                sqlDataReader.Read();
+                TextBeat.Text = sqlDataReader["DISPLAYTIME"].ToString() + " Seconds";
+
+                sqlConnection.Close();
 
                 TimerSort.Start();
             }
