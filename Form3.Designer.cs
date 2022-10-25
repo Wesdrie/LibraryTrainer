@@ -88,7 +88,8 @@
             this.TextWords.Name = "TextWords";
             this.TextWords.Size = new System.Drawing.Size(100, 139);
             this.TextWords.TabIndex = 0;
-            this.TextWords.Text = "\"Drag \'n Drop!\"";
+            this.TextWords.Text = "\"Drag \'n Drop! Match The Values In The Right Column To The Values In The Left Col" +
+    "umn!\"";
             this.TextWords.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // TextInstructions

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,8 @@ namespace LibraryTrainer
 {
     internal class Tools
     {
+        Random random = new Random();
+
         public String GenerateDecimal()
         {
             Random random = new Random();
@@ -68,6 +71,20 @@ namespace LibraryTrainer
             }
 
             return valueOne;
+        }
+
+        public List<int> RandomAreas()
+        {
+            List<int> listOne = new List<int>();
+            int randomNumber;
+
+            for(int i = 0; i < 7; i++)
+            {
+                randomNumber = random.Next(9);
+                listOne.Add(i); 
+            }
+
+            return listOne;
         }
     }
 }
