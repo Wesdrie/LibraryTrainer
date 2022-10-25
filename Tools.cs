@@ -9,8 +9,14 @@ namespace LibraryTrainer
 {
     internal class Tools
     {
+        /// <summary>
+        /// VARIBLES
+        /// </summary>
         Random random = new Random();
 
+        /// <summary>
+        /// GENERATES SINGLE ITEM OF DEWEY DECIMAL VALUES FORMAT XXX.XXX.XXX
+        /// </summary>
         public String GenerateDecimal()
         {
             Random random = new Random();
@@ -46,6 +52,9 @@ namespace LibraryTrainer
             return deweyValue;
         }
 
+        /// <summary>
+        /// CHECKS OPERATION TO ASSIGN POINTS TO USERS
+        /// </summary>
         public int CheckDecimal(List<String> controlList, List<String> userList)
         {
             List<int> checkList = new List<int>();
@@ -73,6 +82,9 @@ namespace LibraryTrainer
             return valueOne;
         }
 
+        /// <summary>
+        /// GENERATES LIST OF RANDOM INTEGERS TO USE IN PULLING VALUES FROM DICTIONARY
+        /// </summary>
         public List<int> RandomAreas()
         {
             List<int> listOne = new List<int>();

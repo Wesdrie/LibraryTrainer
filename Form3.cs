@@ -13,9 +13,17 @@ namespace LibraryTrainer
 {
     public partial class WindowAreas : Form
     {
+        /// <summary>
+        /// VARIBLES
+        /// </summary>
         Tools wrench = new Tools();
         Random random = new Random();
 
+        /// <summary>
+        /// PREDETERMINED DICTIONARY VALUES.
+        /// CREATED AS OBJECT TO REFERNCE MORE INFROMATION.
+        /// NEEDS TO BE STORED ON DB.
+        /// </summary>
         CallAreas[] callAreas =
         {
             new CallAreas(0, "000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
@@ -39,6 +47,11 @@ namespace LibraryTrainer
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// ON WINDOW LOAD PREFORM THESE FUNCTIONS:
+        /// CREATE AND DISPLAY ASSOICATED DATA IN TWO COLUMNS.
+        /// </summary>
         private void WindowAreas_Load(object sender, EventArgs e)
         {
             try
@@ -53,8 +66,6 @@ namespace LibraryTrainer
                 foreach(int i in randomAreas)
                 {
                     ListText.Items.Add(areasDictionary[i].AreaDescription);
-                    Console.WriteLine(i);
-                    Console.WriteLine(areasDictionary[i].AreaNumber);
                 }
 
                 for(int i = 0; i < 4; i++)
@@ -70,6 +81,9 @@ namespace LibraryTrainer
             }
         }
 
+        /// <summary>
+        /// BEGINS TIMER FOR USERS COMPETION & BEGINS CHECKING OPERATIONS FOR USERS POINTS.
+        /// </summary>
         private void TimerAreas_Tick(object sender, EventArgs e)
         {
             try

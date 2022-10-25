@@ -139,9 +139,9 @@ namespace LibraryTrainer
             try
             {
                 TimerSort.Stop();
-                /// <remarks>
-                /// CONNECT TO DATABASE TO SAVE ATTEMPT
-                /// </remarks>
+                /// <summary>
+                /// CONNECT TO DB
+                /// </summary>
             }
             catch (Exception ex)
             {
@@ -153,7 +153,9 @@ namespace LibraryTrainer
         {
             try
             {
-                // MOVE TO TOOLS
+                /// <summary>
+                /// MAYBE BEST TO MOVE FUNCTION TO TOOLS
+                /// </summary>
                 TimerSort.Stop();
                 timerTicker = 0;
                 TextTime.Text = "0 Seconds";
