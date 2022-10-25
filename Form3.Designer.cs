@@ -158,7 +158,7 @@
             this.ListNumbers.Location = new System.Drawing.Point(150, 30);
             this.ListNumbers.Margin = new System.Windows.Forms.Padding(0);
             this.ListNumbers.Name = "ListNumbers";
-            this.ListNumbers.Size = new System.Drawing.Size(120, 289);
+            this.ListNumbers.Size = new System.Drawing.Size(70, 289);
             this.ListNumbers.TabIndex = 1;
             // 
             // ListText
@@ -169,10 +169,10 @@
             this.ListText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(241)))));
             this.ListText.FormattingEnabled = true;
             this.ListText.ItemHeight = 17;
-            this.ListText.Location = new System.Drawing.Point(290, 30);
+            this.ListText.Location = new System.Drawing.Point(235, 30);
             this.ListText.Margin = new System.Windows.Forms.Padding(0);
             this.ListText.Name = "ListText";
-            this.ListText.Size = new System.Drawing.Size(120, 289);
+            this.ListText.Size = new System.Drawing.Size(150, 289);
             this.ListText.TabIndex = 0;
             this.ListText.DragDrop += new System.Windows.Forms.DragEventHandler(this.ListText_DragDrop);
             this.ListText.DragOver += new System.Windows.Forms.DragEventHandler(this.ListText_DragOver);
