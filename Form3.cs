@@ -129,6 +129,56 @@ namespace LibraryTrainer
             }
         }
 
+        /// <summary>
+        /// DRAG & DROP REORDER TO MATCH COLUMNS
+        /// </summary>
+        private void ListText_MouseDown(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                ListText.DoDragDrop(ListText.SelectedItem, DragDropEffects.Move);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ListText_DragOver(object sender, DragEventArgs e)
+        {
+            try
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void ListText_DragDrop(object sender, DragEventArgs e)
+        {
+            try
+            {
+                Point point = ListText.PointToClient(new Point(e.X, e.Y));
+                int index = ListText.IndexFromPoint(point);
+                if (index < 0)
+                {
+                    index = ListText.Items.Count - 1;
+                }
+
+                ListText.Items.Remove(e.Data.GetData(DataFormats.Text));
+                ListText.Items.Insert(index, e.Data.GetData(DataFormats.Text));
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// NAVIGATION CONTROLS & APPLICATION CLOSE
+        /// </summary>
         private void ButtonComplete_Click(object sender, EventArgs e)
         {
             try
