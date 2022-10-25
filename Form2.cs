@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,14 @@ namespace LibraryTrainer
 {
     public partial class WindowSort : Form
     {
+        /// <summary>
+        /// DATABASE CONNECTION
+        /// </summary>
+        String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hendr\\Source\\Repos\\Wesdrie\\LibraryTrainer\\Database1.mdf;Integrated Security=True";
+        String insertCommand = "INSERT INTO SORT (SORT_ID, SORT_TIME, SORT_SCORE) VALUES (@A, @B, @C);";
+        String readCommand = "SELECT MIN(SORT_TIME) AS DISPLAYTIME FROM SORT;";
+        SqlConnection sqlConnection = new SqlConnection();
+
         /// <summary>
         /// VARIBLES
         /// </summary>
