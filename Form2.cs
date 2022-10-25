@@ -20,6 +20,8 @@ namespace LibraryTrainer
         String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hendr\\Source\\Repos\\Wesdrie\\LibraryTrainer\\Database1.mdf;Integrated Security=True";
         String insertCommand = "INSERT INTO SORT (SORT_ID, SORT_TIME, SORT_SCORE) VALUES (@A, @B, @C);";
         String readCommand = "SELECT MIN(SORT_TIME) AS DISPLAYTIME FROM SORT;";
+        String idCommand = "SELECT MAX(SORT_ID) AS DATAID FROM SORT;";
+
         SqlConnection sqlConnection = new SqlConnection();
 
         /// <summary>
@@ -31,7 +33,7 @@ namespace LibraryTrainer
         List<String> sortedDecimals = new List<String>();
         List<String> userDecimals = new List<String>();
 
-        int timerTicker, userScore;
+        int timerTicker, userScore, dataId;
 
         public WindowSort()
         {
@@ -45,9 +47,16 @@ namespace LibraryTrainer
         {
             try
             {
-                /// <remarks>
-                /// CONNECT TO DATABASE TO PULL SCORES
-                /// </remarks>
+                sqlConnection.ConnectionString = connectionString;
+                SqlCommand sqlCommand = new SqlCommand(readCommand, sqlConnection);
+                sqlConnection.Open();
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                sqlDataReader.Read();
+                TextBeat.Text = sqlDataReader["DISPLAYTIME"].ToString() + " Seconds";
+
+                sqlConnection.Close();
 
                 TimerSort.Start();
 
@@ -148,9 +157,41 @@ namespace LibraryTrainer
             try
             {
                 TimerSort.Stop();
-                /// <summary>
-                /// CONNECT TO DB
-                /// </summary>
+
+                if (userScore == 10)
+                {
+                    sqlConnection.ConnectionString = connectionString;
+                    SqlCommand getCommand = new SqlCommand(idCommand, sqlConnection);
+                    sqlConnection.Open();
+
+                    SqlDataReader sqlDataReader = getCommand.ExecuteReader();
+
+                    sqlDataReader.Read();
+                    dataId = Int32.Parse(sqlDataReader["DATAID"].ToString());
+
+                    sqlConnection.Close();
+
+                    sqlConnection.ConnectionString = connectionString;
+                    SqlCommand sqlCommand = new SqlCommand(insertCommand, sqlConnection);
+                    sqlConnection.Open();
+
+                    sqlCommand.Parameters.AddWithValue("@A", dataId + 1);
+                    sqlCommand.Parameters.AddWithValue("@B", timerTicker);
+                    sqlCommand.Parameters.AddWithValue("@C", userScore);
+
+                    int row = sqlCommand.ExecuteNonQuery();
+
+                    sqlConnection.Close();
+
+                    if (row != 0)
+                    {
+                        MessageBox.Show("Score Was Recorded", "Note", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Score Was NOT Recorded", "Note", MessageBoxButtons.OK);
+                    }
+                }
             }
             catch (Exception ex)
             {
