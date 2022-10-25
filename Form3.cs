@@ -26,19 +26,19 @@ namespace LibraryTrainer
         /// </summary>
         CallAreas[] callAreas =
         {
-            new CallAreas(0, "000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
-            new CallAreas(1, "100 - 199", "Philosophy & Psychology", "Paranormal Phenomena, Ethics & “Who Am I”"),
-            new CallAreas(2, "200 - 299", "Religion", "Christians, Hindus & Mythology"),
-            new CallAreas(3, "300 - 399", "Social Sciences", "Laws, Cultures & Folklore"),
-            new CallAreas(4, "400 - 499", "Languages", "Dictionaries, Speech & Sign Language"),
-            new CallAreas(5, "500 - 599", "Science", "Physics, Chemistry & Biology"),
-            new CallAreas(6, "600 - 699", "Technology", "Inventions, Robots & Transportation"),
-            new CallAreas(7, "700 - 799", "The Arts", "Comics, Music & Sports"),
-            new CallAreas(8, "800 - 899", "Literature & Rhetoric", "Shakespeare, Classic Literature & Riddles"),
-            new CallAreas(9, "900 - 999", "History & Geography", "Exploration, Countries & Factual Events"),
+            new CallAreas("000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
+            new CallAreas("100 - 199", "Philosophy & Psychology", "Paranormal Phenomena, Ethics & “Who Am I”"),
+            new CallAreas("200 - 299", "Religion", "Christians, Hindus & Mythology"),
+            new CallAreas("300 - 399", "Social Sciences", "Laws, Cultures & Folklore"),
+            new CallAreas("400 - 499", "Languages", "Dictionaries, Speech & Sign Language"),
+            new CallAreas("500 - 599", "Science", "Physics, Chemistry & Biology"),
+            new CallAreas("600 - 699", "Technology", "Inventions, Robots & Transportation"),
+            new CallAreas("700 - 799", "The Arts", "Comics, Music & Sports"),
+            new CallAreas("800 - 899", "Literature & Rhetoric", "Shakespeare, Classic Literature & Riddles"),
+            new CallAreas("900 - 999", "History & Geography", "Exploration, Countries & Factual Events"),
         };
 
-        Dictionary<int, CallAreas> areasDictionary = new Dictionary<int, CallAreas>();
+        Dictionary<String, CallAreas> areasDictionary = new Dictionary<String, CallAreas>();
         Dictionary<int, int> randomDictionary = new Dictionary<int, int>();
 
         List<int> randomAreas = new List<int>();
@@ -64,17 +64,18 @@ namespace LibraryTrainer
 
                 foreach(CallAreas area in callAreas)
                 {
-                    areasDictionary.Add(area.AreaIndex, area);
+                    areasDictionary.Add(area.AreaNumber, area);
                 }
 
                 foreach(int i in randomAreas)
                 {
-                    ListText.Items.Add(areasDictionary[i].AreaDescription);
+                    ListText.Items.Add(areasDictionary.ElementAt(i).Key);
                 }
 
                 for(int i = 0; i < 4; i++)
                 {
-                    ListNumbers.Items.Add(areasDictionary[randomAreas[i+1]].AreaNumber);
+                    //ListNumbers.Items.Add(areasDictionary[randomAreas[i+1]].AreaNumber);
+                    ListNumbers.Items.Add(areasDictionary.ElementAt(randomAreas[i + 1]).Key);
                 }
 
                 TimerAreas.Start();
@@ -110,14 +111,14 @@ namespace LibraryTrainer
 
                 for(int i = 0; i < numberAreas.Count; i++)
                 {
-                    if (areasDictionary[numberAreas[i].ToString()];
-                    {
-                        Console.WriteLine("1");
-                    }
-                    else
-                    {
-                        Console.WriteLine("2");
-                    }
+                    //if (areasDictionary[numberAreas[i].ToString()];
+                    //{
+                    //    Console.WriteLine("1");
+                    //}
+                    //else
+                    //{
+                    //    Console.WriteLine("2");
+                    //}
                 }
 
                 //userScore = wrench.CheckDecimal(sortedDecimals, userDecimals);
