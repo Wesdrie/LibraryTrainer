@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,16 @@ namespace LibraryTrainer
 {
     public partial class WindowAreas : Form
     {
+        /// <summary>
+        /// DATABASE CONNECTION
+        /// </summary>
+        String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hendr\\Source\\Repos\\Wesdrie\\LibraryTrainer\\Database1.mdf;Integrated Security=True";
+        String insertCommand = "INSERT INTO AREA (AREA_ID, AREA_TIME, AREA_SCORE) VALUES (@A, @B, @C);";
+        String readCommand = "SELECT MIN(AREA_TIME) AS DISPLAYTIME FROM AREA;";
+        String idCommand = "SELECT MAX(AREA_ID) AS DATAID FROM AREA;";
+
+        SqlConnection sqlConnection = new SqlConnection();
+
         /// <summary>
         /// VARIBLES
         /// </summary>
@@ -48,7 +59,7 @@ namespace LibraryTrainer
         List<String> numberAreas = new List<String>();
         List<String> textAreas = new List<String>();
 
-        int timerTicker, userScore;
+        int timerTicker, userScore, dataId;
         String valueOne;
         public WindowAreas()
         {
@@ -58,11 +69,23 @@ namespace LibraryTrainer
         /// <summary>
         /// ON WINDOW LOAD PREFORM THESE FUNCTIONS:
         /// CREATE AND DISPLAY ASSOICATED DATA IN TWO COLUMNS.
+        /// READ FROM DATABSE FOR TIME_TO_BEAT.
         /// </summary>
         private void WindowAreas_Load(object sender, EventArgs e)
         {
             try
             {
+                sqlConnection.ConnectionString = connectionString;
+                SqlCommand sqlCommand = new SqlCommand(readCommand, sqlConnection);
+                sqlConnection.Open();
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                sqlDataReader.Read();
+                TextBeat.Text = sqlDataReader["DISPLAYTIME"].ToString() + " Seconds";
+
+                sqlConnection.Close();
+
                 randomAreas.AddRange(wrench.RandomAreas());
 
                 foreach(CallAreas area in callAreas)
@@ -184,9 +207,41 @@ namespace LibraryTrainer
             try
             {
                 TimerAreas.Stop();
-                /// <remarks>
-                /// CONNECT TO DATABASE TO SAVE ATTEMPT
-                /// </remarks>
+
+                if (userScore == 4)
+                {
+                    sqlConnection.ConnectionString = connectionString;
+                    SqlCommand getCommand = new SqlCommand(idCommand, sqlConnection);
+                    sqlConnection.Open();
+
+                    SqlDataReader sqlDataReader = getCommand.ExecuteReader();
+
+                    sqlDataReader.Read();
+                    dataId = Int32.Parse(sqlDataReader["DATAID"].ToString());
+
+                    sqlConnection.Close();
+
+                    sqlConnection.ConnectionString = connectionString;
+                    SqlCommand sqlCommand = new SqlCommand(insertCommand, sqlConnection);
+                    sqlConnection.Open();
+
+                    sqlCommand.Parameters.AddWithValue("@A", dataId + 1);
+                    sqlCommand.Parameters.AddWithValue("@B", timerTicker);
+                    sqlCommand.Parameters.AddWithValue("@C", userScore);
+
+                    int row = sqlCommand.ExecuteNonQuery();
+
+                    sqlConnection.Close();
+
+                    if (row != 0)
+                    {
+                        MessageBox.Show("Score Was Recorded", "Note", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Score Was NOT Recorded", "Note", MessageBoxButtons.OK);
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -211,6 +266,17 @@ namespace LibraryTrainer
                 {
                     ListText.Items.Add(areasDictionary.ElementAt(i).Value);
                 }
+
+                sqlConnection.ConnectionString = connectionString;
+                SqlCommand sqlCommand = new SqlCommand(readCommand, sqlConnection);
+                sqlConnection.Open();
+
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+
+                sqlDataReader.Read();
+                TextBeat.Text = sqlDataReader["DISPLAYTIME"].ToString() + " Seconds";
+
+                sqlConnection.Close();
 
                 TimerAreas.Start();
             }
