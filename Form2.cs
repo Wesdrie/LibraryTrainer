@@ -58,6 +58,8 @@ namespace LibraryTrainer
 
                 sqlConnection.Close();
 
+                ListSort.Enabled = true;
+
                 TimerSort.Start();
 
                 for (int i = 0; i < 10; i++)
@@ -186,6 +188,7 @@ namespace LibraryTrainer
                     if (row != 0)
                     {
                         MessageBox.Show("Game Infromation Was Recorded!", "Note", MessageBoxButtons.OK);
+                        ListSort.Enabled = false;
                     }
                     else
                     {
@@ -232,6 +235,8 @@ namespace LibraryTrainer
                 TextBeat.Text = sqlDataReader["DISPLAYTIME"].ToString() + " Seconds";
 
                 sqlConnection.Close();
+
+                ListSort.Enabled = true;
 
                 TimerSort.Start();
             }

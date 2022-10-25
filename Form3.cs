@@ -16,7 +16,11 @@ namespace LibraryTrainer
     public partial class WindowAreas : Form
     {
         /// <summary>
-        /// DATABASE CONNECTION
+        /// DECLARE VARIBLES:
+        /// CONNETION STRING TO DATABASE & QUERIES.
+        /// CALL TO OTHER CLASSES.
+        /// DECLARE OBJECT, DICTIONAREIS & ASSOICATED DATA. NEED TO MOVE DATA DB.
+        /// DECLARE LISTS & REMAINING VARIABLES.
         /// </summary>
         String connectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Hendr\\Source\\Repos\\Wesdrie\\LibraryTrainer\\Database1.mdf;Integrated Security=True";
         String insertCommand = "INSERT INTO AREA (AREA_ID, AREA_TIME, AREA_SCORE) VALUES (@A, @B, @C);";
@@ -25,17 +29,9 @@ namespace LibraryTrainer
 
         SqlConnection sqlConnection = new SqlConnection();
 
-        /// <summary>
-        /// VARIBLES
-        /// </summary>
         Tools wrench = new Tools();
         Random random = new Random();
 
-        /// <summary>
-        /// PREDETERMINED DICTIONARY VALUES.
-        /// CREATED AS OBJECT TO REFERNCE MORE INFROMATION OR SWAP INFROMATION DISPLAYED.
-        /// NEEDS TO BE STORED ON DB.
-        /// </summary>
         CallAreas[] callAreas =
         {
             new CallAreas("000 - 099", "General Works", "Basic Information, Encyclopedias & Record Books"),
@@ -61,15 +57,19 @@ namespace LibraryTrainer
 
         int timerTicker, userScore, dataId;
         String valueOne;
+
         public WindowAreas()
         {
             InitializeComponent();
         }
 
         /// <summary>
-        /// ON WINDOW LOAD PREFORM THESE FUNCTIONS:
-        /// CREATE AND DISPLAY ASSOICATED DATA IN TWO COLUMNS.
-        /// READ FROM DATABSE FOR TIME_TO_BEAT.
+        /// ON-WINDOW-LOADS, DO THESE:
+        /// OPEN DATABSE AND FIND MINIMUM TIME-TO-BEAT.
+        /// ENSURE COLUMNS ARE ENABLED.
+        /// GENERATE RANDOM LISTS FROM DICTIONARY.
+        /// START TIMER.
+        /// CAN SWAP OUT COLUMSN INFROMATION.
         /// </summary>
         private void WindowAreas_Load(object sender, EventArgs e)
         {
@@ -85,6 +85,8 @@ namespace LibraryTrainer
                 TextBeat.Text = sqlDataReader["DISPLAYTIME"].ToString() + " Seconds";
 
                 sqlConnection.Close();
+
+                ListText.Enabled = true;
 
                 randomAreas.AddRange(wrench.RandomAreas());
 
@@ -112,7 +114,10 @@ namespace LibraryTrainer
         }
 
         /// <summary>
-        /// BEGINS TIMER FOR USERS COMPETION & BEGINS CHECKING OPERATIONS FOR USERS POINTS.
+        /// TIMER STARTS, DO THESE:
+        /// CONTINOUS 1 SECOND TICK UNTIL STOPPED.
+        /// CLEAR, FILL AND PASS LISTS WITH DICTIRONARY REFERNCES TO TOOLS CLASS.
+        /// DISPLAYED RETURNED VALUE AS POINTS.
         /// </summary>
         private void TimerAreas_Tick(object sender, EventArgs e)
         {
@@ -148,12 +153,13 @@ namespace LibraryTrainer
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                Console.WriteLine("LORP");
             }
         }
 
         /// <summary>
-        /// DRAG & DROP REORDER TO MATCH COLUMNS
+        /// DRAG & DROP:
+        /// MOVE DATA FROM ONE INDEX LOCATION TO ANOTHER.
+        /// MOVE EXISITNG DATA DOWN INDEX.
         /// </summary>
         private void ListText_MouseDown(object sender, MouseEventArgs e)
         {
@@ -200,7 +206,17 @@ namespace LibraryTrainer
         }
 
         /// <summary>
-        /// NAVIGATION CONTROLS & APPLICATION CLOSE
+        /// NAVIGATION CONTROLS FOR BACK & EXIT. ENSURE APPLICATION ENDS.
+        /// ON COMPLETE:
+        /// READ LIST OF IDS & CREATE SEQUENCIAL ID.
+        /// SET ID, SCORE AND TIME.
+        /// NOTIFY USER WITH UPDATES.
+        /// IF USER DOESNT MEET MINIMUM, RESET.
+        /// DISABLE GAME FEATURE.
+        /// ON RESET:
+        /// CLEAR TIMERS & RESTART.
+        /// ENSURE GAME FEATURE IS ENABLED.
+        /// CHECK FOR NEW TIME-TO-BEAT.
         /// </summary>
         private void ButtonComplete_Click(object sender, EventArgs e)
         {
@@ -236,6 +252,7 @@ namespace LibraryTrainer
                     if (row != 0)
                     {
                         MessageBox.Show("Game Infromation Was Recorded!", "Note", MessageBoxButtons.OK);
+                        ListText.Enabled = false;
                     }
                     else
                     {
@@ -282,6 +299,8 @@ namespace LibraryTrainer
                 TextBeat.Text = sqlDataReader["DISPLAYTIME"].ToString() + " Seconds";
 
                 sqlConnection.Close();
+
+                ListText.Enabled = true;
 
                 TimerAreas.Start();
             }
